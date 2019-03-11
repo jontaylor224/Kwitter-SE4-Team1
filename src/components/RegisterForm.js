@@ -20,7 +20,7 @@ class RegisterForm extends Component {
     const { isLoading, err } = this.props;
     return (
       <React.Fragment>
-        <h1>Login</h1>
+        <h1>Register</h1>
         <form onSubmit={this.handleRegister}>
           <label htmlFor="username">Username</label>
           <input
