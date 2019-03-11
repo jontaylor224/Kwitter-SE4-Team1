@@ -5,7 +5,8 @@ const initialState = {
   login: null,
   loginError: null,
   register: null,
-  registerError: null
+  registerError: null,
+  username:null
 };
 
 export default (state = initialState, action) => {
@@ -24,7 +25,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         loginLoading: true,
-        loginError: null
+        registerError: null
       };
     case REGISTER_SUCCESS:
       return { ...state, register: action.payload, loginLoading: false };
