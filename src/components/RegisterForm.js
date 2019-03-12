@@ -20,7 +20,7 @@ class RegisterForm extends Component {
     const { isLoading, err } = this.props;
     return (
       <React.Fragment>
-        <h1>Login</h1>
+        <h1>Register</h1>
         <form onSubmit={this.handleRegister}>
           <label htmlFor="username">Username</label>
           <input
@@ -62,7 +62,7 @@ class RegisterForm extends Component {
             Register
           </button>
         </form>
-        <Link to = "/login">Login</Link>
+        <Link to = "/">Back to Login</Link>
         {isLoading && <Spinner name="circle" color="blue" />}
         {err && <p style={{ color: "red" }}>{err}</p>}
       </React.Fragment>
