@@ -62,7 +62,7 @@ class RegisterForm extends Component {
             Register
           </button>
         </form>
-        <Link to = "/login">Login</Link>
+        <Link to = "/">Back to Login</Link>
         {isLoading && <Spinner name="circle" color="blue" />}
         {err && <p style={{ color: "red" }}>{err}</p>}
       </React.Fragment>
