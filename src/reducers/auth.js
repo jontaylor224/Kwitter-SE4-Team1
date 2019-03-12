@@ -6,7 +6,8 @@ const initialState = {
   loginError: null,
   register: null,
   registerError: null,
-  username:null
+  username:null,
+  displayName:null
 };
 
 export default (state = initialState, action) => {
