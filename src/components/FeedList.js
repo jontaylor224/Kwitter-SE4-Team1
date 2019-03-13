@@ -1,10 +1,11 @@
 import React, { Component } from "react"
-import { Feed } from "./Feed"
+import FeedComp  from "./Feed"
 import { getMessages } from "../actions/messages"
 import { connect } from "react-redux"
 import { Grid } from "semantic-ui-react"
 
-export class MessageList extends Component {
+export class FeedList extends Component {
+    state = {messages:[]}
     componentDidMount() {
         this.props.getMessages()
     }
@@ -13,8 +14,8 @@ export class MessageList extends Component {
             <Grid container stackable>
                 <Grid.Row>
                     <Grid.Column>
-                        {this.props.messages.map(message => (
-                            <Feed />
+                         {this.props.messages.messages.map(message => (
+                            <FeedComp message={message} />
                         ))}
                     </Grid.Column>
                 </Grid.Row>
@@ -22,7 +23,9 @@ export class MessageList extends Component {
         )
     }
 }
-
+const mapStateToProps = (state)=>({
+    messages: state.messages
+})
 const mapDispatchToProps = dispatch => {
     return {
         getMessages: () => {
@@ -31,4 +34,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(MessageList)
+export default connect(mapStateToProps, mapDispatchToProps)(FeedList)
