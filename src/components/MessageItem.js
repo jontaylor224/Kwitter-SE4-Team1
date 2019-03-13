@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { Feed, Icon } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 
-export class FeedComp extends Component {
+
+export class MessageItem extends Component {
   render() {
     return (
       <Feed>
@@ -35,4 +36,4 @@ export class FeedComp extends Component {
   }
 }
 
-export default FeedComp
+export default MessageItem
