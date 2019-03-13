@@ -1,6 +1,3 @@
-
-//create header component
-
 import React, { Component } from 'react'
 import { Menu } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css';
