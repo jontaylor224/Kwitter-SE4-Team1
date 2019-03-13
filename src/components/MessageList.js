@@ -3,7 +3,7 @@ import MessageItem  from "./MessageItem"
 import { getMessages } from "../actions/messages"
 import { connect } from "react-redux"
 import { Grid } from "semantic-ui-react";
-import MessageInput from "./MessageInput";
+import MessageForm from "./MessageForm";
 
 export class MessageList extends Component {
     state = {messages:[]}
@@ -14,12 +14,14 @@ export class MessageList extends Component {
         return (
             <div id='wrapper' >
             <Grid container stackable>
-                <MessageInput />
+                <MessageForm />
                 <Grid.Row>
                     
                     <Grid.Column>
                          {this.props.messages.messages.map(message => (
-                            <MessageItem message={message} />
+                            <MessageItem 
+                            key={message.id}
+                            message={message} />
                         ))}
                     </Grid.Column>
                 </Grid.Row>
