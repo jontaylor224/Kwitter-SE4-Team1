@@ -46,13 +46,3 @@ export default class MenuExampleSecondary extends Component {
         )
     }
 }
-
-/*function mapStateToProps(state) {
-  return {
-    todos: state.todos
-  };
-}
-
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(TodoList);*/
