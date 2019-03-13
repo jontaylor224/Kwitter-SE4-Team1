@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { loginThenGoToUserProfile as login } from "../actions";
 import Spinner from "react-spinkit";
 import { Link } from "react-router-dom";
-import Header from "./Header";
+import StickyHeader from "./StickyHeader";
 
 class LoginForm extends Component {
   state = { username: "", password: "" };
@@ -21,7 +21,7 @@ class LoginForm extends Component {
     const { isLoading, err } = this.props;
     return (
       <React.Fragment>
-        <Header />
+        <StickyHeader />
         <h1>Login</h1>
         <form onSubmit={this.handleLogin}>
           <label htmlFor="username">Username</label>

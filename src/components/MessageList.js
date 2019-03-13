@@ -4,7 +4,7 @@ import { getMessages } from "../actions/messages";
 import { connect } from "react-redux";
 import { Grid } from "semantic-ui-react";
 import MessageForm from "./MessageForm";
-import Header from "./Header";
+import StickyHeader from "./StickyHeader";
 
 export class MessageList extends Component {
   state = { messages: [] };
@@ -14,7 +14,7 @@ export class MessageList extends Component {
   render() {
     return (
       <React.Fragment>
-        <Header />
+        <StickyHeader />
         <Grid container stackable>
           <MessageForm />
           <Grid.Row>

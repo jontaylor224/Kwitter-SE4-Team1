@@ -4,7 +4,7 @@ import 'semantic-ui-css/semantic.min.css';
 import ImageExampleAvatar from "./Avatar"
 import { Link } from "react-router-dom"
 
-class Header extends Component {
+class StickyHeader extends Component {
     // handleItemClick = (e, { name }) => this.setState({ activeItem: name })
     render() {
         return (
@@ -21,6 +21,9 @@ class Header extends Component {
                 <Menu.Item>
                     <Link to="/register">Register</Link>
                 </Menu.Item>
+                <Menu.Item>
+                    <Link to="/profile">Profile</Link>
+                </Menu.Item>
                 <Menu.Menu position='right'>
                     <Menu.Item>
                         <ImageExampleAvatar />
@@ -35,4 +38,4 @@ class Header extends Component {
     }
 }
 
-export default Header
+export default StickyHeader
