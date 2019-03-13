@@ -6,7 +6,7 @@ import { Menu } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css';
 import ImageExampleAvatar from "./Avatar"
 
-export default class MenuExampleSecondary extends Component {
+export default class Header extends Component {
     state = { activeItem: 'home' }
 
     handleItemClick = (e, { name }) => this.setState({ activeItem: name })
