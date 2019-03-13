@@ -4,7 +4,7 @@ import { LoginForm, UserProfile } from ".";
 import RegisterForm from "./RegisterForm";
 import Header from "./Header";
 import "semantic-ui-css/semantic.min.css";
-import MessageList from "./MessageList"
+import MessageList from "./MessageList";
 
 class App extends Component {
   render() {
@@ -12,7 +12,7 @@ class App extends Component {
       <Switch>
         <Route exact path="/" render={() => <LoginForm />} />
         <Route exact path="/profile" render={() => <UserProfile />} />
-        <Route exact path="/home" render={()=><Header />} />
+        <Route exact path="/home" render={() => <Header />} />
         <Route exact path="/register" render={() => <RegisterForm />} />
         <Route exact path="/messages" render={() => <MessageList />} />
       </Switch>

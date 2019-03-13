@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { registerThenGoToUserProfile as register } from "../actions";
 import Spinner from "react-spinkit";
 import { Link } from "react-router-dom"
+import Header from "./Header"
 
 class RegisterForm extends Component {
   state = { username: "", password: "" };
@@ -20,6 +21,7 @@ class RegisterForm extends Component {
     const { isLoading, err } = this.props;
     return (
       <React.Fragment>
+        <Header></Header>
         <h1>Register</h1>
         <form onSubmit={this.handleRegister}>
           <label htmlFor="username">Username</label>
