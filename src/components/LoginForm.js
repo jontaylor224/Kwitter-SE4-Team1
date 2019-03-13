@@ -4,6 +4,7 @@ import { loginThenGoToUserProfile as login } from "../actions";
 import Spinner from "react-spinkit";
 import { Link } from "react-router-dom";
 import StickyHeader from "./StickyHeader";
+import { Form } from "semantic-ui-react";
 
 class LoginForm extends Component {
   state = { username: "", password: "" };
@@ -22,30 +23,31 @@ class LoginForm extends Component {
     return (
       <React.Fragment>
         <StickyHeader />
-        <h1>Login</h1>
-        <form onSubmit={this.handleLogin}>
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            name="username"
-            autoFocus
-            required
-            onChange={this.handleChange}
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            required
-            onChange={this.handleChange}
-          />
-          <button type="submit" disabled={isLoading}>
-            Login
-          </button>
-        </form>
-        <Link to="/register">Register</Link>
-        {isLoading && <Spinner name="circle" color="blue" />}
-        {err && <p style={{ color: "red" }}>{err}</p>}
+        <Form>
+          <h1>Login</h1>
+          <form onSubmit={this.handleLogin}>
+            <label htmlFor="username">Username</label>
+            <input
+              type="text"
+              name="username"
+              autoFocus
+              required
+              onChange={this.handleChange}
+            />
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              required
+              onChange={this.handleChange}
+            />
+            <button type="submit" disabled={isLoading}>
+              Login
+            </button>
+          </form>
+          {isLoading && <Spinner name="circle" color="blue" />}
+          {err && <p style={{ color: "red" }}>{err}</p>}
+        </Form>
       </React.Fragment>
     );
   }
