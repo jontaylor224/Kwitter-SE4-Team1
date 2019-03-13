@@ -1,6 +1,10 @@
+
+//create header component
+
 import React, { Component } from 'react'
 import { Input, Menu } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css';
+import ImageExampleAvatar from "./Avatar"
 
 export default class MenuExampleSecondary extends Component {
     state = { activeItem: 'home' }
@@ -23,22 +27,21 @@ export default class MenuExampleSecondary extends Component {
                     active={activeItem === 'profile'}
                     onClick={this.handleItemClick}
                 />
-                <div class="right">
+                
                 <Menu.Menu position='right'>
-                   <div>
+                   
                     <Menu.Item>
-                        <Input icon='search' placeholder='Search...' />
+                        <ImageExampleAvatar />
                     </Menu.Item>
-                    </div>
-                    <div>
+                    
                     <Menu.Item
                         name='logout'
                         active={activeItem === 'logout'}
                         onClick={this.handleItemClick}
                     />
-                    </div>
+                    
                 </Menu.Menu>
-                </div>
+                
             </Menu>
         )
     }

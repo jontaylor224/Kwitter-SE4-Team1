@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Message } from "./Message"
+import { Feed } from "./Feed"
 import { getMessages } from "../actions/messages"
 import { connect } from "react-redux"
 import { Grid } from "semantic-ui-react"
@@ -14,7 +14,7 @@ export class MessageList extends Component {
                 <Grid.Row>
                     <Grid.Column>
                         {this.props.messages.map(message => (
-                            <Message />
+                            <Feed />
                         ))}
                     </Grid.Column>
                 </Grid.Row>
