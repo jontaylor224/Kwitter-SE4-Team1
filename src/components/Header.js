@@ -5,43 +5,31 @@ import React, { Component } from 'react'
 import { Menu } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css';
 import ImageExampleAvatar from "./Avatar"
+import { Link } from "react-router-dom"
 
 export default class Header extends Component {
-    state = { activeItem: 'home' }
-
-    handleItemClick = (e, { name }) => this.setState({ activeItem: name })
-
+    // handleItemClick = (e, { name }) => this.setState({ activeItem: name })
     render() {
-        const { activeItem } = this.state
-
         return (
             <Menu secondary>
-                <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
-                <Menu.Item
-                    name='messages'
-                    active={activeItem === 'messages'}
-                    onClick={this.handleItemClick}
-                />
-                <Menu.Item
-                    name='profile'
-                    active={activeItem === 'profile'}
-                    onClick={this.handleItemClick}
-                />
-                
+                <Menu.Item>
+                    <Link to="/home">Home</Link>
+                </Menu.Item>
+                <Menu.Item>
+                    <Link to="/messages">Messages</Link>
+                </Menu.Item>
+                <Menu.Item>
+                    <Link to="/profile">Profile</Link>
+                </Menu.Item>
                 <Menu.Menu position='right'>
-                   
                     <Menu.Item>
                         <ImageExampleAvatar />
                     </Menu.Item>
-                    
                     <Menu.Item
                         name='logout'
-                        active={activeItem === 'logout'}
-                        onClick={this.handleItemClick}
+                    // onClick={this.handleItemClick}
                     />
-                    
                 </Menu.Menu>
-                
             </Menu>
         )
     }
