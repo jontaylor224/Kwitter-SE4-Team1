@@ -1,4 +1,11 @@
-import { LOGIN, LOGIN_SUCCESS, LOGIN_FAIL, REGISTER, REGISTER_FAIL, REGISTER_SUCCESS } from "../actions";
+import {
+  LOGIN,
+  LOGIN_SUCCESS,
+  LOGIN_FAIL,
+  REGISTER,
+  REGISTER_FAIL,
+  REGISTER_SUCCESS
+} from "../actions";
 
 const initialState = {
   loginLoading: false,
@@ -6,8 +13,8 @@ const initialState = {
   loginError: null,
   register: null,
   registerError: null,
-  username:null,
-  displayName:null
+  username: null,
+  displayName: null
 };
 
 export default (state = initialState, action) => {
