@@ -23,7 +23,7 @@ const initialState = {
         updatedAt: "",
         messages: []
     },
-    userId: null,
+    userId: 3,
     users: {}
 }
 

@@ -2,12 +2,13 @@ import React, { Component } from "react"
 import logo from "../userIcon.png"
 import { Card, Divider, Image, Header, Segment, Grid } from "semantic-ui-react"
 import { connect } from "react-redux"
-import { getUserInfo } from "../actions"
+import { getLoggedInUserInfo } from "../actions"
+// import { MessageList} from "./MessageList"
 
 class UserProfile extends Component {
-    state = {}
+    // state = {}
     componentDidMount() {
-        this.props.getUserInfo()
+        this.props.getLoggedInUserInfo()
     }
     render() {
         return (
@@ -32,7 +33,7 @@ class UserProfile extends Component {
                         <Header as="h2" textAlign="center">
                             My Messages
                         </Header>
-                        {/* <UserMessages /> */}
+                        {/* < MessageList /> */}
                     </Segment>
                 </Grid.Column>
             </Grid>
@@ -48,29 +49,31 @@ class UserProfile extends Component {
 //     }
 // }
 
-// const mapStateToProps = state => {
-//   return {
-//     displayName: state.loggedInUser.displayName,
-//     about: state.loggedInUser.about,
-//     username: state.loggedInUser.username
-//   }
-// }
+const mapStateToProps = state => {
+  return {
+    displayName: state.users.loggedInUser.displayName,
+    about: state.users.loggedInUser.about,
+    username: state.users.loggedInUser.username
+  }
+}
 
-// const mapStateToProps = auth => {
-//   return {
-//     userId: auth.login.id,
-//     // about: state.about,
-//     // username: state.username
-//   }
-// }
+// const mapStateToProps = ({auth}) => ({
+//      userId: auth.login.id
+// })
+
 
 const mapDispatchToProps = dispatch => {
-    return { getUserInfo: () => dispatch(getUserInfo()) }
+    return { getLoggedInUserInfo: () => dispatch(getLoggedInUserInfo()) }
 }
 
 export default connect(
-    ({auth}) => ({
-        userId: auth.login.id
-    }),
+    mapStateToProps,
     mapDispatchToProps
 )(UserProfile)
+
+// export default connect(
+//     ({auth}) => ({
+//         userId: auth.login.id
+//     }),
+//     mapDispatchToProps
+// )(UserProfile)

@@ -34,6 +34,10 @@ export const getUserInfo = userId => dispatch => {
         dispatch({ type: GET_USER_FAILURE, err });
       });
   };
+export const getLoggedInUserInfo = () => (dispatch, getState) => {
+  const userId = getState().auth.login.id
+    dispatch(getUserInfo(userId))
+  };
 
   export const deleteUser = token => dispatch => {
     dispatch({ type: DELETE_USER });
