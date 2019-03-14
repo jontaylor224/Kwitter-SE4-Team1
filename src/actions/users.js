@@ -12,11 +12,13 @@ export const UPDATE_USER = "UPDATE_USER";
 export const UPDATE_USER_SUCCESS = "UPDATE_USER_SUCCESS";
 export const UPDATE_USER_FAILURE = "UPDATE_USER_FAILURE";
 
-const kwitterURL = "https://kwitter-api.herokuapp.com";
+// const kwitterURL = "https://kwitter-api.herokuapp.com";
+const kwitterURL = "http://localhost:3000";
 
 export const getUserInfo = userId => dispatch => {
     dispatch({ type: GET_USER });
     fetch(`${kwitterURL}/users/${userId}`)
+    // fetch(`${kwitterURL}/users/3`)
       .then(response => {
         if (!response.ok) {
           response.json().then(err => {
