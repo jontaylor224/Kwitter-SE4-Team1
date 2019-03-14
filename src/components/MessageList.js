@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import MessageItem from "./MessageItem";
-import getMessages from "../actions/messages";
+import getMessages from "../actions/getMessages";
 import { connect } from "react-redux";
 import { Grid } from "semantic-ui-react";
 import MessageForm from "./MessageForm";
