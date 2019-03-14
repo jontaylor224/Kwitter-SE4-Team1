@@ -13,7 +13,19 @@ import {
     UPDATE_USER_FAILURE
 } from "../actions/users"
 
-const initialState = {}
+const initialState = {
+    loggedInUser: {
+        id: 0,
+        username: "",
+        displayName: "",
+        about: "",
+        createdAt: "",
+        updatedAt: "",
+        messages: []
+    },
+    userId: 3,
+    users: {}
+}
 
 export default (state = initialState, action) => {
     switch (action.type) {
