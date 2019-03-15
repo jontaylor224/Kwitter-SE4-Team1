@@ -1,4 +1,5 @@
 import { push } from "connected-react-router"
+import { domain } from './constants/index'
 export const DELETE_USER = "DELETE_USER"
 export const DELETE_USER_SUCCESS = "DELETE_USER_SUCCESS"
 export const DELETE_USER_FAILURE = "DELETE_USER_FAILURE"
@@ -13,11 +14,11 @@ export const UPDATE_USER_SUCCESS = "UPDATE_USER_SUCCESS"
 export const UPDATE_USER_FAILURE = "UPDATE_USER_FAILURE"
 
 // const kwitterURL = "https://kwitter-api.herokuapp.com";
-const kwitterURL = "http://localhost:3000"
+// const kwitterURL = "http://localhost:3000"
 
 export const getUserInfo = userId => dispatch => {
     dispatch({ type: GET_USER })
-    fetch(`${kwitterURL}/users/${userId}`)
+    fetch(`${domain}/users/${userId}`)
         .then(response => {
             if (!response.ok) {
                 response.json().then(err => {
@@ -41,7 +42,7 @@ export const getLoggedInUserInfo = () => (dispatch, getState) => {
 
 export const deleteUser = token => dispatch => {
     dispatch({ type: DELETE_USER })
-    fetch(`${kwitterURL}/users`, {
+    fetch(`${domain}/users`, {
         method: "DELETE",
         headers: {
             Authorization: `Bearer ${token}`
@@ -74,7 +75,7 @@ export const updateUser = userData => (dispatch, getState) => {
         delete userData.password
     }
     dispatch({ type: UPDATE_USER })
-    fetch(`${kwitterURL}/users`, {
+    fetch(`${domain}/users`, {
         method: "PATCH",
         headers: {
             Authorization: `Bearer ${token}`,
@@ -101,7 +102,7 @@ export const updateUser = userData => (dispatch, getState) => {
 
 export const getAnyUser = userId => dispatch => {
     dispatch({ type: GET_ANY_USER })
-    fetch(`${kwitterURL}/users/${userId}`)
+    fetch(`${domain}/users/${userId}`)
         .then(response => {
             if (!response.ok) {
                 response.json().then(err => {

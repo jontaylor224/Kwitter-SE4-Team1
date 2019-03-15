@@ -2,17 +2,16 @@ import React, { Component } from "react"
 import userIcon from "../userIcon.png"
 import { connect } from "react-redux"
 import { Image } from "semantic-ui-react"
-
-const kwitterURL = "http://localhost:3000"
+import {domain} from '../actions/constants/index'
 
 class UserImage extends Component {
     state = { src: userIcon }
     componentDidMount() {
-        fetch(`${kwitterURL}/users/${this.props.userId}/picture`).then(
+        fetch(`${domain}/users/${this.props.userId}/picture`).then(
             response => {
                 if (response.status !== 404 && response.ok) {
                     this.setState({
-                        src: `${kwitterURL}/users/${this.props.userId}/picture`
+                        src: `${domain}/users/${this.props.userId}/picture`
                     })
                 }
             }
