@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { Grid } from "semantic-ui-react";
 import MessageForm from "./MessageForm";
 import StickyHeader from "./StickyHeader";
+import { Container } from "semantic-ui-react";
 
 export class MessageList extends Component {
   state = { messages: [] };
@@ -15,16 +16,18 @@ export class MessageList extends Component {
     return (
       <React.Fragment>
         <StickyHeader />
-        <Grid container stackable>
-          <MessageForm />
-          <Grid.Row>
-            <Grid.Column>
-              {this.props.messages.messages.map(message => (
-                <MessageItem key={message.id} message={message} />
-              ))}
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
+        <Container text>
+          <Grid container stackable>
+            <MessageForm />
+            <Grid.Row>
+              <Grid.Column>
+                {this.props.messages.messages.map(message => (
+                  <MessageItem key={message.id} message={message} />
+                ))}
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Container>
       </React.Fragment>
     );
   }

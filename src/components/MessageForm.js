@@ -17,13 +17,18 @@ class MessageForm extends Component {
 
   render() {
     return (
-      <Form onSubmit={this.handleCreateMessage}>
-        <Form.Field>
-          <label>Enter new message</label>
-          <input placeholder="Enter message ..." onChange={this.handleChange} />
-        </Form.Field>
-        <Button type="submit">Submit</Button>
-      </Form>
+      <div container text>
+        <Form onSubmit={this.handleCreateMessage}>
+          <Form.Field>
+            <label>Enter new message</label>
+            <input
+              placeholder="Enter message ..."
+              onChange={this.handleChange}
+            />
+          </Form.Field>
+          <Button type="submit">Submit</Button>
+        </Form>
+      </div>
     );
   }
 }

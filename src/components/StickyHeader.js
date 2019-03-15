@@ -3,6 +3,8 @@ import { Menu } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css';
 import ImageExampleAvatar from "./Avatar"
 import { Link } from "react-router-dom"
+import { connect } from "react-redux";
+
 
 class StickyHeader extends Component {
     // handleItemClick = (e, { name }) => this.setState({ activeItem: name })
@@ -13,9 +15,6 @@ class StickyHeader extends Component {
                     <Link to="/home">Home</Link>
                 </Menu.Item>
                 <Menu.Item>
-                    <Link to="/messages">Messages</Link>
-                </Menu.Item>
-                <Menu.Item>
                     <Link to="/">Login</Link>
                 </Menu.Item>
                 <Menu.Item>
@@ -24,18 +23,24 @@ class StickyHeader extends Component {
                 <Menu.Item>
                     <Link to="/profile">Profile</Link>
                 </Menu.Item>
+                { this.props.login!==null ?
                 <Menu.Menu position='right'>
                     <Menu.Item>
                         <ImageExampleAvatar />
                     </Menu.Item>
                     <Menu.Item
                         name='logout'
-                    // onClick={this.handleItemClick}
                     />
                 </Menu.Menu>
+                :<div></div>}
             </Menu>
         )
     }
 }
 
-export default StickyHeader
+export default connect(
+    ({ auth }) => ({
+      login: auth.login
+    }),
+    null
+  )(StickyHeader);
