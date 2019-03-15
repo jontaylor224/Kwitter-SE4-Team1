@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { Button, Form } from "semantic-ui-react";
+import { Button, Form, Card } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { createMessage } from "../actions";
+
 
 class MessageForm extends Component {
   state = { token: this.props.token, text: "" };
@@ -17,7 +18,8 @@ class MessageForm extends Component {
 
   render() {
     return (
-      <div container text>
+      <Card>
+        <Card.Content>
         <Form onSubmit={this.handleCreateMessage}>
           <Form.Field>
             <label>Enter new message</label>
@@ -28,7 +30,8 @@ class MessageForm extends Component {
           </Form.Field>
           <Button type="submit">Submit</Button>
         </Form>
-      </div>
+        </Card.Content>
+      </Card>
     );
   }
 }

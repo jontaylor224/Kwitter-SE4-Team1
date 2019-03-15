@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import MessageItem from "./MessageItem";
 import getMessages from "../actions/getMessages";
 import { connect } from "react-redux";
-import { Grid } from "semantic-ui-react";
+import { Grid, Container, Card } from "semantic-ui-react";
 import MessageForm from "./MessageForm";
 import StickyHeader from "./StickyHeader";
-import { Container } from "semantic-ui-react";
 
 export class MessageList extends Component {
   state = { messages: [] };
@@ -16,7 +15,6 @@ export class MessageList extends Component {
     return (
       <React.Fragment>
         <StickyHeader />
-        <Container text>
           <Grid container stackable>
             <MessageForm />
             <Grid.Row>
@@ -27,7 +25,6 @@ export class MessageList extends Component {
               </Grid.Column>
             </Grid.Row>
           </Grid>
-        </Container>
       </React.Fragment>
     );
   }
