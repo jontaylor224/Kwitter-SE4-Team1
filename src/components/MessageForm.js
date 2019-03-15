@@ -16,7 +16,6 @@ class MessageForm extends Component {
   };
 
   render() {
-    const { isLoading, err, user } = this.props;
     return (
       <Form onSubmit={this.handleCreateMessage}>
         <Form.Field>
