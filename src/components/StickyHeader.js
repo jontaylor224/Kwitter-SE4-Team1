@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Menu } from "semantic-ui-react";
+import { Menu, Button } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import ImageExampleAvatar from "./Avatar";
 import { Link } from "react-router-dom";
@@ -13,25 +13,31 @@ class StickyHeader extends Component {
         {this.props.login !== null ? (
           <React.Fragment>
             <Menu.Item>
-              <Link to="/home">Home</Link>
+              <Link to="/home">
+                <Button>Home</Button>
+              </Link>
             </Menu.Item>
             <Menu.Item>
-              <Link to="/profile">Profile</Link>
+              
+                <Link to="/profile"><Button>Profile</Button></Link>
+              
             </Menu.Item>
             <Menu.Menu position="right">
               <Menu.Item>
                 <ImageExampleAvatar />
               </Menu.Item>
-              <Menu.Item name="logout" />
+              <Button>
+                <Menu.Item name="logout" />
+              </Button>
             </Menu.Menu>
           </React.Fragment>
         ) : (
           <React.Fragment>
             <Menu.Item>
-              <Link to="/">Login</Link>
+              <Link to="/"><Button>Login</Button></Link>
             </Menu.Item>
             <Menu.Item>
-              <Link to="/register">Register</Link>
+              <Link to="/register"><Button>Register</Button></Link>
             </Menu.Item>
           </React.Fragment>
         )}
