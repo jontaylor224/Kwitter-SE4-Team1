@@ -66,5 +66,5 @@ export const loginThenGoToUserProfile = loginData => dispatch => {
 };
 
 export const registerThenGoToUserProfile = registerData => dispatch => {
-  return dispatch(register(registerData)).then(() => dispatch(push("/profile")));
+  return dispatch(register(registerData)).then(() => dispatch(push("/")));
 };
