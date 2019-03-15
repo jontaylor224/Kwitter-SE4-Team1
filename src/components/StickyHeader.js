@@ -26,9 +26,9 @@ class StickyHeader extends Component {
               <Menu.Item>
                 <ImageExampleAvatar />
               </Menu.Item>
-              <Button>
-                <Menu.Item name="logout" />
-              </Button>
+              <Menu.Item>
+                <Button>Logout</Button>
+              </Menu.Item>
             </Menu.Menu>
           </React.Fragment>
         ) : (
