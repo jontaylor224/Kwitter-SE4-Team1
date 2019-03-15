@@ -23,12 +23,12 @@ class RegisterForm extends Component {
       <React.Fragment>
         <StickyHeader />
         <Container text>
-          <Form>
+          <Form onSubmit={this.handleRegister}>
             <h1>Register</h1>
             <FormField>
-              <form onSubmit={this.handleRegister}>
+              
                 <label>Username</label>
-                <div class="ui input">
+                <div className="ui input">
                   <input
                     type="text"
                     name="username"
@@ -58,7 +58,7 @@ class RegisterForm extends Component {
                   required
                   onChange={this.handleChange}
                 />
-              </form>
+              
               {isLoading && <Spinner name="circle" color="blue" />}
               {err && <p style={{ color: "red" }}>{err}</p>}
             </FormField>
