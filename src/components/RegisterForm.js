@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { registerThenGoToUserProfile as register } from "../actions";
 import Spinner from "react-spinkit";
 import StickyHeader from "./StickyHeader";
-import { Form, FormField, Container } from "semantic-ui-react";
+import { Form, FormField, Container, Button } from "semantic-ui-react";
 
 class RegisterForm extends Component {
   state = { username: "", password: "" };
@@ -21,13 +21,13 @@ class RegisterForm extends Component {
     const { isLoading, err } = this.props;
     return (
       <React.Fragment>
-        <Form>
-          <StickyHeader />
-          <Container text>
+        <StickyHeader />
+        <Container text>
+          <Form>
             <h1>Register</h1>
             <FormField>
               <form onSubmit={this.handleRegister}>
-                <label htmlFor="username">Username</label>
+                <label>Username</label>
                 <div class="ui input">
                   <input
                     type="text"
@@ -37,36 +37,36 @@ class RegisterForm extends Component {
                     onChange={this.handleChange}
                   />
                 </div>
-                <label htmlFor="username">Display Name</label>
+                <label>Display Name</label>
                 <input
                   type="text"
                   name="displayName"
                   required
                   onChange={this.handleChange}
                 />
-                <label htmlFor="password">Password</label>
+                <label>Password</label>
                 <input
                   type="password"
                   name="password"
                   required
                   onChange={this.handleChange}
                 />
-                <label htmlFor="password">Confirm Password</label>
+                <label>Confirm Password</label>
                 <input
                   type="password"
                   name="confirmPassword"
                   required
                   onChange={this.handleChange}
                 />
-                <button type="submit" disabled={isLoading}>
-                  Register
-                </button>
               </form>
               {isLoading && <Spinner name="circle" color="blue" />}
               {err && <p style={{ color: "red" }}>{err}</p>}
             </FormField>
-          </Container>
-        </Form>
+            <Button type="submit" disabled={isLoading}>
+              Submit
+            </Button>
+          </Form>
+        </Container>
       </React.Fragment>
     );
   }

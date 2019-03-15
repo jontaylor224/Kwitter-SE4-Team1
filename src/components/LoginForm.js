@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { loginThenGoToUserProfile as login } from "../actions";
 import Spinner from "react-spinkit";
 import StickyHeader from "./StickyHeader";
-import { Form, FormField, Container } from "semantic-ui-react";
+import { Form, FormField, Container, Button } from "semantic-ui-react";
 
 class LoginForm extends Component {
   state = { username: "", password: "" };
@@ -26,7 +26,7 @@ class LoginForm extends Component {
           <Form onSubmit={this.handleLogin}>
             <h1>Login</h1>
             <FormField>
-              <label htmlFor="username">Username</label>
+              <label>Username</label>
               <input
                 type="text"
                 name="username"
@@ -34,19 +34,19 @@ class LoginForm extends Component {
                 required
                 onChange={this.handleChange}
               />
-              <label htmlFor="password">Password</label>
+              <label>Password</label>
               <input
                 type="password"
                 name="password"
                 required
                 onChange={this.handleChange}
               />
-              <button type="submit" disabled={isLoading}>
-                Login
-              </button>
               {isLoading && <Spinner name="circle" color="blue" />}
               {err && <p style={{ color: "red" }}>{err}</p>}
             </FormField>
+            <Button type="submit" disabled={isLoading}>
+              Submit
+            </Button>
           </Form>
         </Container>
       </React.Fragment>
