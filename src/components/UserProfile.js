@@ -6,7 +6,6 @@ import { getLoggedInUserInfo } from "../actions"
 // import { MessageList} from "./MessageList"
 
 class UserProfile extends Component {
-    // state = {}
     componentDidMount() {
         this.props.getLoggedInUserInfo()
     }
@@ -41,26 +40,13 @@ class UserProfile extends Component {
     }
 }
 
-// const mapStateToProps = () => {
-//     return {
-//         displayName: "Jon",
-//         about: "Generic Bio",
-//         username: "Jon"
-//     }
-// }
-
 const mapStateToProps = state => {
-  return {
-    displayName: state.users.loggedInUser.displayName,
-    about: state.users.loggedInUser.about,
-    username: state.users.loggedInUser.username
-  }
+    return {
+        displayName: state.users.loggedInUser.displayName,
+        about: state.users.loggedInUser.about,
+        username: state.users.loggedInUser.username
+    }
 }
-
-// const mapStateToProps = ({auth}) => ({
-//      userId: auth.login.id
-// })
-
 
 const mapDispatchToProps = dispatch => {
     return { getLoggedInUserInfo: () => dispatch(getLoggedInUserInfo()) }
@@ -70,10 +56,3 @@ export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(UserProfile)
-
-// export default connect(
-//     ({auth}) => ({
-//         userId: auth.login.id
-//     }),
-//     mapDispatchToProps
-// )(UserProfile)
