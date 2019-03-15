@@ -2,8 +2,8 @@ import React, { Component } from "react"
 import { Card, Divider } from "semantic-ui-react"
 import { connect } from "react-redux"
 import { getLoggedInUserInfo } from "../actions"
-import UserImage from "./UserImage"
-// import { MessageList} from "./MessageList"
+// import UserImage from "./UserImage"
+import UserAvatar from "./UserAvatar";
 
 class UserProfile extends Component {
     componentDidMount() {
@@ -13,11 +13,11 @@ class UserProfile extends Component {
         return (
             <Card>
                 <Card.Content>
-                    {/* <Image src={logo} /> */}
-                    <UserImage userId={this.props.userId} />
+                    {/* <UserImage userId={this.props.userId} />
                     <Card.Header as="h2" textAlign="left">
                         {this.props.username}
-                    </Card.Header>
+                    </Card.Header> */}
+                    <UserAvatar />
                     <Divider />
                     <Card.Meta>User since {this.props.createdAt}.</Card.Meta>
                     <Card.Header as="h4">Bio:</Card.Header>
