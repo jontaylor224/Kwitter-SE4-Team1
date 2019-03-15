@@ -18,9 +18,9 @@ class StickyHeader extends Component {
               </Link>
             </Menu.Item>
             <Menu.Item>
-              
-                <Link to="/profile"><Button>Profile</Button></Link>
-              
+              <Link to="/profile">
+                <Button>Profile</Button>
+              </Link>
             </Menu.Item>
             <Menu.Menu position="right">
               <Menu.Item>
@@ -34,10 +34,14 @@ class StickyHeader extends Component {
         ) : (
           <React.Fragment>
             <Menu.Item>
-              <Link to="/"><Button>Login</Button></Link>
+              <Link to="/">
+                <Button>Login</Button>
+              </Link>
             </Menu.Item>
             <Menu.Item>
-              <Link to="/register"><Button>Register</Button></Link>
+              <Link to="/register">
+                <Button>Register</Button>
+              </Link>
             </Menu.Item>
           </React.Fragment>
         )}
