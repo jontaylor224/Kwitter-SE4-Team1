@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import MessageItem from "./MessageItem";
 import getMessages from "../actions/getMessages";
 import { connect } from "react-redux";
-import { Grid, Container, Card } from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
 import MessageForm from "./MessageForm";
 import StickyHeader from "./StickyHeader";
 
