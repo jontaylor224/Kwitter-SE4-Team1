@@ -13,7 +13,7 @@ export class HomeView extends Component {
           <Grid.Row>
             <Grid.Column floated="right" width={10}>
               <MessageForm />
-              <MessageList></MessageList>
+              <MessageList />
             </Grid.Column>
           </Grid.Row>
         </Grid>
