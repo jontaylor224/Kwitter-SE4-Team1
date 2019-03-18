@@ -3,11 +3,11 @@ import { Menu, Button, Divider } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import UserImage from "./UserImage";
-import { logout } from "../actions"
+import { logoutThenGoToLogin as logout } from "../actions"
 
 class StickyHeader extends Component {
 
-  handleLogout = e => {
+  handleLogout = () => {
     this.props.logout(this.props.login.token);
   };
 
