@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Feed, Icon } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
+import UserImage from "./UserImage"
 
 
 export class MessageItem extends Component {
@@ -9,10 +10,7 @@ export class MessageItem extends Component {
       <Feed>
         <Feed.Event>
           <Feed.Label>
-            <img
-              src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg"
-              alt=""
-            />
+            <UserImage userId={this.props.message.userId} size="mini" />
           </Feed.Label>
           <Feed.Content>
             <Feed.Summary>
