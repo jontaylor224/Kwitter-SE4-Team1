@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import StickyHeader from "./StickyHeader"
 import UserProfile from "./UserProfile"
-import { Grid, Segment, Header, Modal, Button } from "semantic-ui-react"
+import { Grid, Segment, Header } from "semantic-ui-react"
 import UpdateProfileForm from "./UpdateProfileForm"
 import MessageList from "./MessageList"
 
@@ -15,9 +15,7 @@ export default class ProfilePage extends Component {
                     <Grid.Row>
                         <Grid.Column floated="left" width={6}>
                             <UserProfile />
-                            <Modal trigger={<Button>Update Profile</Button>}>
-                                <UpdateProfileForm />
-                            </Modal>
+                            <UpdateProfileForm />
                         </Grid.Column>
                         <Grid.Column floated="right" width={10}>
                             <Segment>

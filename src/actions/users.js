@@ -74,6 +74,9 @@ export const updateUser = userData => (dispatch, getState) => {
     if (userData.password === "") {
         delete userData.password
     }
+    if (userData.about === "") {
+      delete userData.about
+    }
     dispatch({ type: UPDATE_USER })
     fetch(`${domain}/users`, {
         method: "PATCH",
