@@ -26,9 +26,16 @@ class UserAvatar extends Component {
 }
 
 const mapStateToProps = state => {
-    return {
-        userId: state.auth.login.id,
-        displayName: state.users.loggedInUser.displayName
+    if(state.auth.login!=null){
+        return {
+            userId: state.auth.login.id,
+            displayName: state.users.loggedInUser.displayName
+        }
+    } else {
+        return {
+            userId: null,
+            displayName: null
+        }
     }
 }
 

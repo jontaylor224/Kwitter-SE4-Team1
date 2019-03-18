@@ -22,6 +22,7 @@ export class MessageList extends Component {
 const mapStateToProps = state => ({
   messages: state.messages
 });
+
 const mapDispatchToProps = dispatch => {
   return {
     getMessages: () => {

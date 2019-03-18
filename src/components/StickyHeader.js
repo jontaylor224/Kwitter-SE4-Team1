@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 import { Menu, Button, Divider } from "semantic-ui-react";
-import "semantic-ui-css/semantic.min.css";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import UserImage from "./UserImage";
+import { logoutThenGoToLogin as logout } from "../actions"
 
 class StickyHeader extends Component {
-  // handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
+  handleLogout = () => {
+    this.props.logout(this.props.login.token);
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -29,7 +33,7 @@ class StickyHeader extends Component {
                   {this.props.displayName}
                 </Menu.Item>
                 <Menu.Item>
-                  <Button>Logout</Button>
+                  <Button onClick={this.handleLogout}>Logout</Button>
                 </Menu.Item>
               </Menu.Menu>
             </React.Fragment>
@@ -59,5 +63,5 @@ export default connect(
     login: auth.login,
     displayName: users.loggedInUser.displayName
   }),
-  null
+  { logout }
 )(StickyHeader);
