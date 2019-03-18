@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import getMessages from "../actions/getMessages";
 import { Grid } from "semantic-ui-react";
 import MessageForm from "./MessageForm";
 import StickyHeader from "./StickyHeader";
