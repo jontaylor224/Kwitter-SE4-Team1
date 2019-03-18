@@ -15,7 +15,7 @@ export class HomeView extends Component {
           <Grid.Column width={5}>
             <UserAvatar/>
           </Grid.Column>
-            <Grid.Column width={5}>
+            <Grid.Column width={10}>
               <MessageForm />
               <MessageList />
             </Grid.Column>
