@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import MessageItem from "./MessageItem";
 import getMessages from "../actions/getMessages";
 import { connect } from "react-redux";
-import { Grid } from "semantic-ui-react";
-import MessageForm from "./MessageForm";
-import StickyHeader from "./StickyHeader";
 
 export class MessageList extends Component {
   state = { messages: [] };
@@ -14,21 +11,14 @@ export class MessageList extends Component {
   render() {
     return (
       <React.Fragment>
-        <StickyHeader />
-        <Grid container stackable>
-          <Grid.Row>
-            <Grid.Column floated="right" width={10}>
-              <MessageForm />
-              {this.props.messages.messages.map(message => (
-                <MessageItem key={message.id} message={message} />
-              ))}
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
+        {this.props.messages.messages.map(message => (
+          <MessageItem key={message.id} message={message} />
+        ))}
       </React.Fragment>
     );
   }
 }
+
 const mapStateToProps = state => ({
   messages: state.messages
 });
