@@ -10,6 +10,7 @@ class MessageForm extends Component {
   handleCreateMessage = e => {
     e.preventDefault();
     this.props.createMessage(this.state);
+    e.target[0].value = ""
   };
 
   handleChange = e => {
