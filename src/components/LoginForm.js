@@ -26,7 +26,7 @@ class LoginForm extends Component {
           <Form onSubmit={this.handleLogin}>
             <h1>Login</h1>
             <FormField>
-            <Form.Input
+              <Form.Input
                 placeholder="Username"
                 name="username"
                 fluid

@@ -14,17 +14,17 @@ export class MessageList extends Component {
   render() {
     return (
       <React.Fragment>
-          <StickyHeader />
-          <Grid container stackable>
-            <Grid.Row>
-              <Grid.Column floated="right" width={10}>
-                <MessageForm />
-                {this.props.messages.messages.map(message => (
-                  <MessageItem key={message.id} message={message} />
-                ))}
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
+        <StickyHeader />
+        <Grid container stackable>
+          <Grid.Row>
+            <Grid.Column floated="right" width={10}>
+              <MessageForm />
+              {this.props.messages.messages.map(message => (
+                <MessageItem key={message.id} message={message} />
+              ))}
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
       </React.Fragment>
     );
   }
