@@ -26,19 +26,21 @@ class LoginForm extends Component {
           <Form onSubmit={this.handleLogin}>
             <h1>Login</h1>
             <FormField>
-              <label>Username</label>
-              <input
-                type="text"
+            <Form.Input
+                placeholder="Username"
                 name="username"
+                fluid
                 autoFocus
-                required
+                label="Username"
                 onChange={this.handleChange}
               />
-              <label>Password</label>
-              <input
-                type="password"
+              <Form.Input
+                placeholder="Password"
                 name="password"
+                type="password"
                 required
+                fluid
+                label="Password"
                 onChange={this.handleChange}
               />
               {isLoading && <Spinner name="circle" color="blue" />}
