@@ -3,6 +3,7 @@ import StickyHeader from "./StickyHeader"
 import UserProfile from "./UserProfile"
 import { Grid, Segment, Header } from "semantic-ui-react"
 import UpdateProfileForm from "./UpdateProfileForm"
+import MessageList from "./MessageList"
 
 export default class ProfilePage extends Component {
     render() {
@@ -21,6 +22,7 @@ export default class ProfilePage extends Component {
                                 <Header as="h2" textAlign="center">
                                     My Messages
                                 </Header>
+                                < MessageList />
                             </Segment>{" "}
                         </Grid.Column>
                     </Grid.Row>
