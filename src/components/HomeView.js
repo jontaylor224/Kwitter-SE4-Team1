@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Grid } from "semantic-ui-react";
 import MessageForm from "./MessageForm";
 import StickyHeader from "./StickyHeader";
-import MessageList from "./MessageList"
+import MessageList from "./MessageList";
 
 export class HomeView extends Component {
   render() {
@@ -10,8 +10,8 @@ export class HomeView extends Component {
       <React.Fragment>
         <StickyHeader />
         <Grid container stackable>
-          <Grid.Row>
-            <Grid.Column floated="right" width={10}>
+          <Grid.Row columns={1}>
+            <Grid.Column width={5}>
               <MessageForm />
               <MessageList />
             </Grid.Column>
@@ -21,4 +21,4 @@ export class HomeView extends Component {
     );
   }
 }
-export default HomeView
+export default HomeView;
