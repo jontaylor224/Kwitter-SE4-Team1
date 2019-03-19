@@ -1,58 +1,70 @@
 import React, { Component } from "react";
-import { Menu, Button } from "semantic-ui-react";
-import "semantic-ui-css/semantic.min.css";
-import ImageExampleAvatar from "./Avatar";
+import { Menu, Button, Divider } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import UserImage from "./UserImage";
+import { logoutThenGoToLogin as logout } from "../actions"
 
 class StickyHeader extends Component {
-  // handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  handleLogout = () => {
+    this.props.logout(this.props.login.token);
+  };
   render() {
     return (
-      <Menu secondary>
-        {this.props.login !== null ? (
-          <React.Fragment>
-            <Menu.Item>
-              <Link to="/home">
-                <Button>Home</Button>
-              </Link>
-            </Menu.Item>
-            <Menu.Item>
-              <Link to="/profile">
-                <Button>Profile</Button>
-              </Link>
-            </Menu.Item>
-            <Menu.Menu position="right">
+      <React.Fragment>
+        <Menu secondary>
+          {this.props.login !== null ? (
+            <React.Fragment>
               <Menu.Item>
-                <ImageExampleAvatar />
+                <Link to="/home">
+                  <Button style={this.state.buttonStyle}>Home</Button>
+                </Link>
               </Menu.Item>
               <Menu.Item>
-                <Button>Logout</Button>
+                <Link to="/profile">
+                  <Button style={this.state.buttonStyle}>Profile</Button>
+                </Link>
               </Menu.Item>
-            </Menu.Menu>
-          </React.Fragment>
-        ) : (
-          <React.Fragment>
-            <Menu.Item>
-              <Link to="/">
-                <Button>Login</Button>
-              </Link>
-            </Menu.Item>
-            <Menu.Item>
-              <Link to="/register">
-                <Button>Register</Button>
-              </Link>
-            </Menu.Item>
-          </React.Fragment>
-        )}
-      </Menu>
+              <Menu.Menu position="right">
+                <Menu.Item>
+                  <UserImage userId={this.props.login.id} size="mini" />
+                  {this.props.displayName}
+                </Menu.Item>
+                <Menu.Item>
+
+                  <Button onClick={this.handleLogout}>Logout</Button>
+                </Menu.Item>
+              </Menu.Menu>
+            </React.Fragment>
+          ) : (
+            <React.Fragment>
+              <Menu.Item>
+                <Link to="/">
+                  <Button style={{ backgroundColor: "#e6ffff" }}>
+                    Login
+                  </Button>
+                </Link>
+              </Menu.Item>
+              <Menu.Item>
+                <Link to="/register">
+                  <Button style={{ backgroundColor: "#e6ffff" }}>
+                    Register
+                  </Button>
+                </Link>
+              </Menu.Item>
+            </React.Fragment>
+          )}
+        </Menu>
+        <Divider style={{ borderBottom: "1px solid aqua"}}/>
+      </React.Fragment>
     );
   }
 }
 
 export default connect(
-  ({ auth }) => ({
-    login: auth.login
+  ({ auth, users }) => ({
+    login: auth.login,
+    displayName: users.loggedInUser.displayName
   }),
-  null
+  { logout }
 )(StickyHeader);

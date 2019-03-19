@@ -10,6 +10,7 @@ class MessageForm extends Component {
   handleCreateMessage = e => {
     e.preventDefault();
     this.props.createMessage(this.state);
+    e.target[0].value = ""
   };
 
   handleChange = e => {
@@ -22,9 +23,9 @@ class MessageForm extends Component {
         <Card.Content>
         <Form onSubmit={this.handleCreateMessage}>
           <Form.Field>
-            <label>Enter new message</label>
-            <input
-              placeholder="Enter message ..."
+            <Form.Input
+              label="Kweet it"
+              placeholder="Enter kweet..."
               onChange={this.handleChange}
             />
           </Form.Field>

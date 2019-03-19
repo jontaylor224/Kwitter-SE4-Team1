@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { Feed, Icon } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
+
 import { connect } from "react-redux";
 import { addLike } from "../actions";
 import {toggleAddLike} from "../actions"
+import UserImage from "./UserImage"
 
 export class MessageItem extends Component {
   
@@ -45,6 +47,7 @@ export class MessageItem extends Component {
            );
          }
        }
+
 
 export default connect(
   ({ auth }) => ({

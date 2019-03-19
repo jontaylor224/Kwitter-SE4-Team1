@@ -45,6 +45,7 @@ export default (state = initialState, action) => {
     case CREATE_MESSAGE_SUCCESS:
       return {
         ...state,
+        messages: [action.payload.message, ...state.messages],
         createMessageLoading: false
       };
     case CREATE_MESSAGE_FAIL:

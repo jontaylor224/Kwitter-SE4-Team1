@@ -26,39 +26,39 @@ class RegisterForm extends Component {
           <Form onSubmit={this.handleRegister}>
             <h1>Register</h1>
             <FormField>
-              
-                <label>Username</label>
-                <div className="ui input">
-                  <input
-                    type="text"
-                    name="username"
-                    autoFocus
-                    required
-                    onChange={this.handleChange}
-                  />
-                </div>
-                <label>Display Name</label>
-                <input
-                  type="text"
-                  name="displayName"
-                  required
-                  onChange={this.handleChange}
-                />
-                <label>Password</label>
-                <input
-                  type="password"
-                  name="password"
-                  required
-                  onChange={this.handleChange}
-                />
-                <label>Confirm Password</label>
-                <input
-                  type="password"
-                  name="confirmPassword"
-                  required
-                  onChange={this.handleChange}
-                />
-              
+              <Form.Input
+                placeholder="Username"
+                name="username"
+                fluid
+                autoFocus
+                label="Username"
+                onChange={this.handleChange}
+              />
+              <Form.Input
+                placeholder="New display name"
+                name="displayName"
+                fluid
+                label="Display name"
+                onChange={this.handleChange}
+              />
+              <Form.Input
+                placeholder="Password"
+                name="password"
+                type="password"
+                required
+                fluid
+                label="Password"
+                onChange={this.handleChange}
+              />
+              <Form.Input
+                placeholder="Confirm Password"
+                name="password"
+                type="password"
+                required
+                fluid
+                label="Confirm Password"
+                onChange={this.handleChange}
+              />
               {isLoading && <Spinner name="circle" color="blue" />}
               {err && <p style={{ color: "red" }}>{err}</p>}
             </FormField>

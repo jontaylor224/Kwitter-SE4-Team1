@@ -1,5 +1,5 @@
 import { push } from "connected-react-router"
-import { domain } from './constants/index'
+import { domain } from "./constants/index"
 export const DELETE_USER = "DELETE_USER"
 export const DELETE_USER_SUCCESS = "DELETE_USER_SUCCESS"
 export const DELETE_USER_FAILURE = "DELETE_USER_FAILURE"
@@ -67,12 +67,15 @@ export const deleteUser = token => dispatch => {
 }
 
 export const updateUser = userData => (dispatch, getState) => {
-    const token = getState().authentication.token
+    const token = getState().auth.login.token
     if (userData.displayName === "") {
         delete userData.displayName
     }
     if (userData.password === "") {
         delete userData.password
+    }
+    if (userData.about === "") {
+      delete userData.about
     }
     dispatch({ type: UPDATE_USER })
     fetch(`${domain}/users`, {

@@ -12,9 +12,12 @@ class UserAvatar extends Component {
         return (
             <Card>
                 <Card.Content>
-                    <UserImage userId={this.props.userId} />
+                    <UserImage
+                        userId={this.props.userId}
+                        size={this.props.size}
+                    />
                     <Card.Header as="h2" textAlign="left">
-                        {this.props.username}
+                        {this.props.displayName}
                     </Card.Header>
                 </Card.Content>
             </Card>
@@ -23,9 +26,16 @@ class UserAvatar extends Component {
 }
 
 const mapStateToProps = state => {
-    return {
-        userId: state.auth.login.id,
-        username: state.users.loggedInUser.username
+    if(state.auth.login!=null){
+        return {
+            userId: state.auth.login.id,
+            displayName: state.users.loggedInUser.displayName
+        }
+    } else {
+        return {
+            userId: null,
+            displayName: null
+        }
     }
 }
 
