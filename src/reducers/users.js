@@ -12,7 +12,10 @@ import {
     UPDATE_USER_SUCCESS,
     UPDATE_USER_FAILURE,
     UPLOAD_USER_IMAGE_SUCCESS,
-    UPLOAD_USER_IMAGE_FAILURE
+    UPLOAD_USER_IMAGE_FAILURE,
+    GET_USERS,
+    GET_USERS_SUCCESS,
+    GET_USERS_FAIL
 } from "../actions/users"
 
 const initialState = {
@@ -27,7 +30,8 @@ const initialState = {
     },
     userId: 3,
     users: {},
-    uploadImageResult: ""
+    uploadImageResult: "",
+    userList: []
 }
 
 export default (state = initialState, action) => {
@@ -74,11 +78,20 @@ export default (state = initialState, action) => {
                 uploadImageResult: action.uploadImageResult,
                 imageTimestamp: action.imageTimestamp
             }
-
         case UPLOAD_USER_IMAGE_FAILURE:
             return {
                 ...state,
                 uploadImageResult: action.uploadImageResult
+        case GET_USERS:
+            return state
+        case GET_USERS_SUCCESS:
+            return {
+                ...state,
+                userList: action.payload.users
+            }
+        case GET_USERS_FAIL:
+            return {
+                ...state
             }
         default:
             return state

@@ -1,5 +1,7 @@
 import { push } from "connected-react-router"
-import { domain } from "./constants/index"
+import { domain, jsonHeaders, handleJsonResponse } from "./constants/index"
+
+
 export const DELETE_USER = "DELETE_USER"
 export const DELETE_USER_SUCCESS = "DELETE_USER_SUCCESS"
 export const DELETE_USER_FAILURE = "DELETE_USER_FAILURE"
@@ -14,6 +16,9 @@ export const UPDATE_USER_SUCCESS = "UPDATE_USER_SUCCESS"
 export const UPDATE_USER_FAILURE = "UPDATE_USER_FAILURE"
 export const UPLOAD_USER_IMAGE_SUCCESS = "UPLOAD_USER_IMAGE_SUCCESS"
 export const UPLOAD_USER_IMAGE_FAILURE = "UPLOAD_USER_IMAGE_FAILURE"
+export const GET_USERS = "GET_USERS"
+export const GET_USERS_SUCCESS = "GET_USERS_SUCCESS"
+export const GET_USERS_FAIL = "GET_USERS_FAIL"
 
 export const getUserInfo = userId => dispatch => {
     dispatch({ type: GET_USER })
@@ -147,4 +152,27 @@ export const uploadImage = imageData => (dispatch, getState) => {
                 uploadImageResult: "Image upload failed"
             })
         })
+}
+
+export const getUsers = () => dispatch => {
+    dispatch({
+      type: GET_USERS
+    });
+
+    return fetch(`${domain}/users`, {
+      method: "GET",
+      headers: jsonHeaders
+    })
+      .then(handleJsonResponse)
+      .then(result => {
+        return dispatch({
+          type: GET_USERS_SUCCESS,
+          payload: result
+        });
+      })
+      .catch(err => {
+        return Promise.reject(
+          dispatch({ type: GET_USERS_FAIL, payload: err.message })
+        );
+      });
 }

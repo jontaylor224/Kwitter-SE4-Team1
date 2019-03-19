@@ -7,8 +7,7 @@ export const GET_MESSAGE_SUCCESS = "GET_MESSAGE_SUCCESS";
 export const GET_MESSAGE_FAIL = "GET_MESSAGE_FAIL";
 
 const url = domain + "/messages";
-
-const getMessages = () => dispatch => {
+export const getMessages = () => dispatch => {
     dispatch({
         type: GET_MESSAGE
     });
