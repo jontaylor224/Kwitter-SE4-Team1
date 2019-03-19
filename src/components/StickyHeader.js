@@ -6,11 +6,9 @@ import UserImage from "./UserImage";
 import { logoutThenGoToLogin as logout } from "../actions"
 
 class StickyHeader extends Component {
-
   handleLogout = () => {
     this.props.logout(this.props.login.token);
   };
-
   render() {
     return (
       <React.Fragment>
@@ -19,12 +17,12 @@ class StickyHeader extends Component {
             <React.Fragment>
               <Menu.Item>
                 <Link to="/home">
-                  <Button>Home</Button>
+                  <Button style={this.state.buttonStyle}>Home</Button>
                 </Link>
               </Menu.Item>
               <Menu.Item>
                 <Link to="/profile">
-                  <Button>Profile</Button>
+                  <Button style={this.state.buttonStyle}>Profile</Button>
                 </Link>
               </Menu.Item>
               <Menu.Menu position="right">
@@ -33,6 +31,7 @@ class StickyHeader extends Component {
                   {this.props.displayName}
                 </Menu.Item>
                 <Menu.Item>
+
                   <Button onClick={this.handleLogout}>Logout</Button>
                 </Menu.Item>
               </Menu.Menu>
@@ -41,18 +40,22 @@ class StickyHeader extends Component {
             <React.Fragment>
               <Menu.Item>
                 <Link to="/">
-                  <Button>Login</Button>
+                  <Button style={{ backgroundColor: "#e6ffff" }}>
+                    Login
+                  </Button>
                 </Link>
               </Menu.Item>
               <Menu.Item>
                 <Link to="/register">
-                  <Button>Register</Button>
+                  <Button style={{ backgroundColor: "#e6ffff" }}>
+                    Register
+                  </Button>
                 </Link>
               </Menu.Item>
             </React.Fragment>
           )}
         </Menu>
-        <Divider />
+        <Divider style={{ borderBottom: "1px solid aqua"}}/>
       </React.Fragment>
     );
   }
