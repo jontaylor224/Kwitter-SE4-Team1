@@ -11,6 +11,7 @@ class MessageForm extends Component {
     e.preventDefault();
     this.props.createMessage(this.state);
     e.target[0].value = ""
+    this.setState({ text: '' })
   };
 
   handleChange = e => {
