@@ -2,6 +2,7 @@ import {
   ADD_LIKE,
   ADD_LIKE_SUCCESS,
   ADD_LIKE_FAIL,
+  DELETE_LIKE
   
 } from "../actions";
 

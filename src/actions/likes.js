@@ -4,6 +4,7 @@ import {getMessages} from "./getMessages.js";
 export const ADD_LIKE = "ADD_LIKE";
 export const ADD_LIKE_SUCCESS = "ADD_LIKE_SUCCESS";
 export const ADD_LIKE_FAIL = "ADD_LIKE_FAIL";
+export const DELETE_LIKE = "DELETE_LIKE";
 const url = domain + "/likes";
 
 export const toggleAddLike = messageId => (dispatch, getState) => {
@@ -43,5 +44,27 @@ export const addLike = messageId => (dispatch, getState) => {
         );
       });   
 };
+
+export const deleteLike = messageId =>(dispatch, getState) =>{
+  return function (dispatch, getState) {
+    let token = getState().auth.login.token;
+    return fetch(url / messageId, {
+      method: "DELETE",
+      headers: {
+        ...jsonHeaders,
+        Authorization: "Bearer " + token
+      }
+    })
+      .then(result => {
+        if (result) {
+          dispatch({
+            type: DELETE_LIKE,
+            payload: result
+          });
+        }
+      })
+      .catch(err => console.log(err));
+  };
+}
 
 export default addLike
