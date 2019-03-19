@@ -10,7 +10,10 @@ import {
     GET_USER_FAILURE,
     UPDATE_USER,
     UPDATE_USER_SUCCESS,
-    UPDATE_USER_FAILURE
+    UPDATE_USER_FAILURE,
+    GET_USERS,
+    GET_USERS_SUCCESS,
+    GET_USERS_FAIL
 } from "../actions/users"
 
 const initialState = {
@@ -24,7 +27,8 @@ const initialState = {
         messages: []
     },
     userId: 3,
-    users: {}
+    users: {},
+    userList: []
 }
 
 export default (state = initialState, action) => {
@@ -65,6 +69,18 @@ export default (state = initialState, action) => {
             }
         case UPDATE_USER_FAILURE:
             return state
+
+        case GET_USERS:
+            return state
+        case GET_USERS_SUCCESS:
+            return {
+                ...state,
+                userList: action.payload.users
+            }
+        case GET_USERS_FAIL:
+            return {
+                ...state
+            }
         default:
             return state
     }

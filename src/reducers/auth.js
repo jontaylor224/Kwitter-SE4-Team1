@@ -42,7 +42,7 @@ export default (state = initialState, action) => {
         registerError: null
       };
     case REGISTER_SUCCESS:
-      return { ...state, login: action.payload, loginLoading: false };
+      return { ...state, loginLoading: false };
     case REGISTER_FAIL:
       return { ...state, registerError: action.payload, loginLoading: false };
 
