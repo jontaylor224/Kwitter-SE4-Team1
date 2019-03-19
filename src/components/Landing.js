@@ -24,7 +24,7 @@ export default class Landing extends Component {
       <React.Fragment>
         <div className="ui vertically divided grid" id="landingpageparent">
           <div className="two column row">
-            <div className="column" id="landingpage">
+            <div className="column" id="landingpageleft">
               <div style={{ margin: "100px auto", width: "250px" }}>
                 <h4
                   style={{
@@ -46,7 +46,7 @@ export default class Landing extends Component {
                 </p>
               </div>
             </div>
-            <div className="column">
+            <div className="column" id="landingpageright">
               <StickyHeader />
               <Container text>
                 <Form onSubmit={this.handleLogin}>
