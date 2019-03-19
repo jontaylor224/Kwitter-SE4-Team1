@@ -15,7 +15,7 @@ export class MessageItem extends Component {
   };
   render() {
     return (
-      <Feed>
+      <Feed className="feedstyle">
         <Feed.Event>
           <Feed.Label>
             <img
