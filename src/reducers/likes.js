@@ -9,7 +9,8 @@ import {
 const initialState = {
   addLikeLoading: false,
   addLikeError: null,
-  likes:null
+  likes:null,
+  likeId:null
   
 };
 
@@ -32,6 +33,10 @@ export default (state = initialState, action) => {
         ...state,
         addLikeError: action.payload,
         addLikeLoading: false
+      };
+    case DELETE_LIKE:
+      return {
+        ...state, likeId:action.payload
       };
 
     default:
