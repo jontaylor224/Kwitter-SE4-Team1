@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import { loginThenGoToUserProfile as login } from "../actions";
 import Spinner from "react-spinkit";
 import StickyHeader from "./StickyHeader";
 import { Form, FormField, Container, Button } from "semantic-ui-react";
