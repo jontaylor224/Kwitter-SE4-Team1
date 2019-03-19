@@ -14,12 +14,11 @@ export const GET_USER_FAILURE = "GET_USER_FAILURE"
 export const UPDATE_USER = "UPDATE_USER"
 export const UPDATE_USER_SUCCESS = "UPDATE_USER_SUCCESS"
 export const UPDATE_USER_FAILURE = "UPDATE_USER_FAILURE"
+export const UPLOAD_USER_IMAGE_SUCCESS = "UPLOAD_USER_IMAGE_SUCCESS"
+export const UPLOAD_USER_IMAGE_FAILURE = "UPLOAD_USER_IMAGE_FAILURE"
 export const GET_USERS = "GET_USERS"
 export const GET_USERS_SUCCESS = "GET_USERS_SUCCESS"
 export const GET_USERS_FAIL = "GET_USERS_FAIL"
-
-// const kwitterURL = "https://kwitter-api.herokuapp.com";
-// const kwitterURL = "http://localhost:3000"
 
 export const getUserInfo = userId => dispatch => {
     dispatch({ type: GET_USER })
@@ -80,7 +79,7 @@ export const updateUser = userData => (dispatch, getState) => {
         delete userData.password
     }
     if (userData.about === "") {
-      delete userData.about
+        delete userData.about
     }
     dispatch({ type: UPDATE_USER })
     fetch(`${domain}/users`, {
@@ -124,6 +123,34 @@ export const getAnyUser = userId => dispatch => {
         })
         .catch(err => {
             dispatch({ type: GET_ANY_USER_FAILURE, err })
+        })
+}
+
+export const uploadImage = imageData => (dispatch, getState) => {
+    const token = getState().auth.login.token
+    fetch(`${domain}/users/picture`, {
+        method: "PUT",
+        headers: {
+            Authorization: "Bearer " + token
+        },
+        body: imageData
+    })
+        .then(res => {
+            if (!res.ok) {
+                throw res.status
+            } else {
+                dispatch({
+                    type: UPLOAD_USER_IMAGE_SUCCESS,
+                    uploadImageResult: "Image upload successful",
+                    imageTimestamp: Date.now()
+                })
+            }
+        })
+        .catch(err => {
+            dispatch({
+                type: UPLOAD_USER_IMAGE_FAILURE,
+                uploadImageResult: "Image upload failed"
+            })
         })
 }
 

@@ -11,6 +11,8 @@ import {
     UPDATE_USER,
     UPDATE_USER_SUCCESS,
     UPDATE_USER_FAILURE,
+    UPLOAD_USER_IMAGE_SUCCESS,
+    UPLOAD_USER_IMAGE_FAILURE,
     GET_USERS,
     GET_USERS_SUCCESS,
     GET_USERS_FAIL
@@ -28,6 +30,7 @@ const initialState = {
     },
     userId: 3,
     users: {},
+    uploadImageResult: "",
     userList: []
 }
 
@@ -69,7 +72,16 @@ export default (state = initialState, action) => {
             }
         case UPDATE_USER_FAILURE:
             return state
-
+        case UPLOAD_USER_IMAGE_SUCCESS:
+            return {
+                ...state,
+                uploadImageResult: action.uploadImageResult,
+                imageTimestamp: action.imageTimestamp
+            }
+        case UPLOAD_USER_IMAGE_FAILURE:
+            return {
+                ...state,
+                uploadImageResult: action.uploadImageResult
         case GET_USERS:
             return state
         case GET_USERS_SUCCESS:
