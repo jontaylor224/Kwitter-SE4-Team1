@@ -1,5 +1,13 @@
 import React, { Component } from "react"
-import { Form, Header, Divider, Grid, Modal, Button } from "semantic-ui-react"
+import {
+    Form,
+    Header,
+    Divider,
+    Grid,
+    Modal,
+    Button,
+    Icon
+} from "semantic-ui-react"
 import { connect } from "react-redux"
 import { updateUser } from "../actions/users"
 
@@ -22,7 +30,8 @@ class UpdateProfileForm extends Component {
                 <Modal
                     trigger={
                         <Button onClick={this.handleModal}>
-                            Update Profile Info
+                            <Icon name="id card outline" />
+                            Update Profile
                         </Button>
                     }
                     open={this.state.open}

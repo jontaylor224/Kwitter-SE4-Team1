@@ -21,12 +21,28 @@ class UserImage extends Component {
     componentWillUnmount() {
         this._isMounted = false
     }
+    static getDerivedStateFromProps(props) {
+        if (props.imageTimestamp === undefined) {
+            return null
+        }
+        return {
+            src: `${domain}/users/${props.userId}/picture?timestamp=${
+                props.imageTimestamp
+            }`
+        }
+    }
     render() {
         return <Image src={this.state.src} size={this.props.size} circular />
     }
 }
 
+const mapStateToProps = state => {
+    return {
+        imageTimestamp: state.users.imageTimestamp
+    }
+}
+
 export default connect(
-    null,
+    mapStateToProps,
     null
 )(UserImage)

@@ -7,7 +7,9 @@ class ImageUploader extends Component {
         event.preventDefault()
         const formData = new FormData(event.target)
         this.props.image(formData)
+        this.props.onSubmissionComplete()
     }
+
     render() {
         return (
             <form onSubmit={this.handleSubmit}>

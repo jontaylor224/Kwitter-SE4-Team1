@@ -71,7 +71,8 @@ export default (state = initialState, action) => {
         case UPLOAD_USER_IMAGE_SUCCESS:
             return {
                 ...state,
-                uploadImageResult: action.uploadImageResult
+                uploadImageResult: action.uploadImageResult,
+                imageTimestamp: action.imageTimestamp
             }
 
         case UPLOAD_USER_IMAGE_FAILURE:

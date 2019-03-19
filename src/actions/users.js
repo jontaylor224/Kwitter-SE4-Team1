@@ -15,9 +15,6 @@ export const UPDATE_USER_FAILURE = "UPDATE_USER_FAILURE"
 export const UPLOAD_USER_IMAGE_SUCCESS = "UPLOAD_USER_IMAGE_SUCCESS"
 export const UPLOAD_USER_IMAGE_FAILURE = "UPLOAD_USER_IMAGE_FAILURE"
 
-// const kwitterURL = "https://kwitter-api.herokuapp.com";
-// const kwitterURL = "http://localhost:3000"
-
 export const getUserInfo = userId => dispatch => {
     dispatch({ type: GET_USER })
     fetch(`${domain}/users/${userId}`)
@@ -129,8 +126,7 @@ export const uploadImage = imageData => (dispatch, getState) => {
     fetch(`${domain}/users/picture`, {
         method: "PUT",
         headers: {
-            Authorization: "Bearer " + token,
-            // "Content-Type": "multipart/form-data"
+            Authorization: "Bearer " + token
         },
         body: imageData
     })
@@ -140,7 +136,8 @@ export const uploadImage = imageData => (dispatch, getState) => {
             } else {
                 dispatch({
                     type: UPLOAD_USER_IMAGE_SUCCESS,
-                    uploadImageResult: "Image upload successful"
+                    uploadImageResult: "Image upload successful",
+                    imageTimestamp: Date.now()
                 })
             }
         })
