@@ -37,12 +37,12 @@ class StickyHeader extends Component {
             <React.Fragment>
               <Menu.Item>
                 <Link to="/">
-                  <Button>Login</Button>
+                    <Button style={{ backgroundColor:"#e6ffff"}}>Login</Button>
                 </Link>
               </Menu.Item>
               <Menu.Item>
                 <Link to="/register">
-                  <Button>Register</Button>
+                    <Button style={{ backgroundColor:"#e6ffff"}}>Register</Button>
                 </Link>
               </Menu.Item>
             </React.Fragment>
