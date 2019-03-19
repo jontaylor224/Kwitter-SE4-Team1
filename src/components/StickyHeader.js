@@ -17,12 +17,12 @@ class StickyHeader extends Component {
             <React.Fragment>
               <Menu.Item>
                 <Link to="/home">
-                  <Button style={this.state.buttonStyle}>Home</Button>
+                  <Button >Home</Button>
                 </Link>
               </Menu.Item>
               <Menu.Item>
                 <Link to="/profile">
-                  <Button style={this.state.buttonStyle}>Profile</Button>
+                  <Button >Profile</Button>
                 </Link>
               </Menu.Item>
               <Menu.Menu position="right">
