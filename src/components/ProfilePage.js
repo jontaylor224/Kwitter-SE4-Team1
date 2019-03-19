@@ -4,6 +4,7 @@ import UserProfile from "./UserProfile"
 import { Grid, Segment, Header } from "semantic-ui-react"
 import UpdateProfileForm from "./UpdateProfileForm"
 import MessageList from "./MessageList"
+import UpdateProfilePicture from "./UpdateProfilePicture"
 
 export default class ProfilePage extends Component {
     render() {
@@ -15,6 +16,7 @@ export default class ProfilePage extends Component {
                     <Grid.Row>
                         <Grid.Column floated="left" width={6}>
                             <UserProfile />
+                            <UpdateProfilePicture />
                             <UpdateProfileForm />
                         </Grid.Column>
                         <Grid.Column floated="right" width={10}>
@@ -22,7 +24,7 @@ export default class ProfilePage extends Component {
                                 <Header as="h2" textAlign="center">
                                     My Messages
                                 </Header>
-                                < MessageList />
+                                <MessageList />
                             </Segment>{" "}
                         </Grid.Column>
                     </Grid.Row>

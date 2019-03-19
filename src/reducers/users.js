@@ -10,7 +10,9 @@ import {
     GET_USER_FAILURE,
     UPDATE_USER,
     UPDATE_USER_SUCCESS,
-    UPDATE_USER_FAILURE
+    UPDATE_USER_FAILURE,
+    UPLOAD_USER_IMAGE_SUCCESS,
+    UPLOAD_USER_IMAGE_FAILURE
 } from "../actions/users"
 
 const initialState = {
@@ -24,7 +26,8 @@ const initialState = {
         messages: []
     },
     userId: 3,
-    users: {}
+    users: {},
+    uploadImageResult: ""
 }
 
 export default (state = initialState, action) => {
@@ -65,6 +68,17 @@ export default (state = initialState, action) => {
             }
         case UPDATE_USER_FAILURE:
             return state
+        case UPLOAD_USER_IMAGE_SUCCESS:
+            return {
+                ...state,
+                uploadImageResult: action.uploadImageResult
+            }
+
+        case UPLOAD_USER_IMAGE_FAILURE:
+            return {
+                ...state,
+                uploadImageResult: action.uploadImageResult
+            }
         default:
             return state
     }

@@ -22,7 +22,7 @@ class UpdateProfileForm extends Component {
                 <Modal
                     trigger={
                         <Button onClick={this.handleModal}>
-                            Update Profile
+                            Update Profile Info
                         </Button>
                     }
                     open={this.state.open}
