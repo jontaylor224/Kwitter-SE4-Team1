@@ -10,6 +10,10 @@ export const REGISTER = "REGISTER";
 export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
 export const REGISTER_FAIL = "REGISTER_FAIL";
 
+export const LOGOUT = "LOGOUT";
+export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
+export const LOGOUT_FAIL = "LOGOUT_FAIL";
+
 const url = domain + "/auth";
 
 // action creators
@@ -61,10 +65,37 @@ const register = registerData => dispatch => {
     });
 };
 
+const logout = logoutData => dispatch => {
+  dispatch({
+    type: LOGOUT
+  });
+
+  return fetch(url + "/logout", {
+    method: "GET",
+    headers: { jsonHeaders, Authorization: `Bearer ${logoutData}` }
+  })
+    .then(handleJsonResponse)
+    .then(result => {
+      return dispatch({
+        type: LOGOUT_SUCCESS,
+        payload: result
+      });
+    })
+    .catch(err => {
+      return Promise.reject(
+        dispatch({ type: LOGOUT_FAIL, payload: err.message })
+      );
+    });
+};
+
 export const loginThenGoToUserProfile = loginData => dispatch => {
   return dispatch(login(loginData)).then(() => dispatch(push("/profile")));
 };
 
 export const registerThenGoToUserProfile = registerData => dispatch => {
   return dispatch(register(registerData)).then(() => dispatch(push("/")));
+};
+
+export const logoutThenGoToLogin = (logoutData) => dispatch => {
+  return dispatch(logout(logoutData)).then(() => dispatch(push("/")));
 };
