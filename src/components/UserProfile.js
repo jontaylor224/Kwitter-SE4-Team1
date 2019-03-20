@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Divider } from "semantic-ui-react";
+import { Card } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { getLoggedInUserInfo } from "../actions";
 import UserAvatar from "./UserAvatar";
@@ -13,7 +13,6 @@ class UserProfile extends Component {
       <Card style={{margin:'auto'}}>
         <Card.Content>
           <UserAvatar size="medium" />
-          <Divider />
           <Card.Meta>User since {this.props.createdAt}.</Card.Meta>
           <Card.Header as="h4">Bio:</Card.Header>
           <Card.Description>
