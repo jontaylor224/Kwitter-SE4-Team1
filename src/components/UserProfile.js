@@ -3,7 +3,8 @@ import { Card } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { getLoggedInUserInfo } from "../actions";
 import UserAvatar from "./UserAvatar";
-import Moment from "react-moment";
+// import Moment from "react-moment";
+import moment from "moment";
 
 class UserProfile extends Component {
   componentDidMount() {
@@ -16,7 +17,8 @@ class UserProfile extends Component {
           <UserAvatar />
           <Card.Meta>
             Kweeting since{" "}
-            <Moment format="MM/DD/YYYY">{this.props.createdAt}</Moment>
+            {/* <Moment format="MM/DD/YYYY">{this.props.createdAt}</Moment> */}
+            {moment(this.props.createdAt).format('MMMM DD YYYY')}
           </Card.Meta>
           <Card>
             <Card.Content>
