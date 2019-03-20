@@ -3,16 +3,16 @@ import { Feed } from "semantic-ui-react";
 import { connect } from "react-redux";
 
 export class UserItem extends Component {
- 
-  
   render() {
     return (
       <Feed className="feedstyle">
         <Feed.Event>
           <Feed.Content>
             <Feed.Summary>
-              <Feed.User>{this.props.displayName}</Feed.User> 
-              <Feed.Date>{this.props.createdAt}</Feed.Date>
+              <Feed.User>{this.props.displayName}</Feed.User>
+              {/* <Feed.Date>
+                <Moment>{this.props.createdAt}</Moment>
+              </Feed.Date> */}
             </Feed.Summary>
           </Feed.Content>
         </Feed.Event>
