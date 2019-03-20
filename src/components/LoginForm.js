@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 import { loginThenGoToUserProfile as login } from "../actions";
 import Spinner from "react-spinkit";
 import StickyHeader from "./StickyHeader";
-import { Form, FormField, Card, Button } from "semantic-ui-react";
+import { Form, FormField, Card, Button, Image } from "semantic-ui-react";
+import logo from "../squirrellogo.png"
 
 class LoginForm extends Component {
   state = { username: "", password: "" };
@@ -23,6 +24,7 @@ class LoginForm extends Component {
       <React.Fragment>
         <StickyHeader />
         <Card style={{margin:'auto'}}>
+        <Image src={logo} alt=''/>
           <Card.Content>
             <Form onSubmit={this.handleLogin}>
               <h1>Login</h1>
