@@ -3,7 +3,7 @@ import { Menu, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import UserImage from "./UserImage";
-import { logoutThenGoToLogin as logout } from "../actions"
+import { logoutThenGoToLogin as logout } from "../actions";
 
 class StickyHeader extends Component {
   handleLogout = () => {
@@ -17,9 +17,7 @@ class StickyHeader extends Component {
             <React.Fragment>
               <Menu.Item>
                 <Link to="/home">
-                  <Button style={{ backgroundColor: "#e6ffff" }}>
-                    Home
-                  </Button>
+                  <Button style={{ backgroundColor: "#e6ffff" }}>Home</Button>
                 </Link>
               </Menu.Item>
               <Menu.Item>
@@ -31,8 +29,8 @@ class StickyHeader extends Component {
               </Menu.Item>
               <Menu.Menu position="right">
                 <Menu.Item>
+                  <span style={{marginRight:'10px'}}>{this.props.displayName}</span>
                   <UserImage userId={this.props.login.id} size="mini" />
-                  {this.props.displayName}
                 </Menu.Item>
                 <Menu.Item>
                   <Button
@@ -48,9 +46,7 @@ class StickyHeader extends Component {
             <React.Fragment>
               <Menu.Item>
                 <Link to="/">
-                  <Button style={{ backgroundColor: "#e6ffff" }}>
-                    Login
-                  </Button>
+                  <Button style={{ backgroundColor: "#e6ffff" }}>Login</Button>
                 </Link>
               </Menu.Item>
               <Menu.Item>
@@ -63,7 +59,6 @@ class StickyHeader extends Component {
             </React.Fragment>
           )}
         </Menu>
-        
       </React.Fragment>
     );
   }
