@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Feed, Icon } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { toggleAddLike, toggleDeleteLike } from "../actions";
+import Moment from 'react-moment';
 
 export class MessageItem extends Component {
   handleAddLike = e => {
@@ -25,7 +26,7 @@ export class MessageItem extends Component {
           <Feed.Content>
             <Feed.Summary>
               <Feed.User>{this.props.message.userId}</Feed.User> kweeted on
-              <Feed.Date>{this.props.message.createdAt}</Feed.Date>
+              <Feed.Date><Moment>{this.props.message.createdAt}</Moment></Feed.Date>
             </Feed.Summary>
             <Feed.Extra>{this.props.message.text}</Feed.Extra>
             <Feed.Meta>
