@@ -12,8 +12,9 @@ export class HomeView extends Component {
       <React.Fragment>
         <StickyHeader />
         <Grid container stackable>
+          <Grid.Row />
           <Grid.Row columns={2}>
-            <Grid.Column width={5}>
+            <Grid.Column floated="left" width={6}>
               <Card>
                 <Card.Content>
                   <UserAvatar />
@@ -26,9 +27,9 @@ export class HomeView extends Component {
                 </Card.Content>
               </Card>
             </Grid.Column>
-            <Grid.Column width={10}>
+            <Grid.Column floated="right" width={10}>
               <MessageForm />
-              <Card style={{width:"100%"}}>
+              <Card style={{ width: "100%" }}>
                 <Card.Content>
                   <MessageList />
                 </Card.Content>

@@ -13,10 +13,10 @@ export default class ProfilePage extends Component {
         <StickyHeader />
         <Grid container stackable>
           <Grid.Row />
-          <Grid.Row>
+          <Grid.Row columns={2}>
             <Grid.Column floated="left" width={6}>
               <UserProfile />
-              <Card style={{margin:'auto'}}>
+              <Card>
                 <UpdateProfilePicture />
                 <UpdateProfileForm />
               </Card>

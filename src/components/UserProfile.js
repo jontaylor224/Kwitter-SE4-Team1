@@ -10,7 +10,7 @@ class UserProfile extends Component {
   }
   render() {
     return (
-      <Card style={{margin:'auto'}}>
+      <Card>
         <Card.Content>
           <UserAvatar size="medium" />
           <Card.Meta>User since {this.props.createdAt}.</Card.Meta>
