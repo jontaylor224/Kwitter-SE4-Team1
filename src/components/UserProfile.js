@@ -22,7 +22,7 @@ class UserProfile extends Component {
             <Card.Content>
               <Card.Header as="h4">Bio:</Card.Header>
               <Card.Description>
-                {this.props.about || "This user has not yet created a bio"}
+                {this.props.about || "This kweeter has not yet created a bio"}
               </Card.Description>
             </Card.Content>
           </Card>
