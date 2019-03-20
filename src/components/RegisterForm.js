@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 import { registerThenGoToUserProfile as register } from "../actions";
 import Spinner from "react-spinkit";
 import StickyHeader from "./StickyHeader";
-import { Form, FormField, Card, Button } from "semantic-ui-react";
+import { Form, FormField, Card, Button, Image } from "semantic-ui-react";
+import logo from "../squir.png";
 
 class RegisterForm extends Component {
   state = { username: "", password: "" };
@@ -23,6 +24,7 @@ class RegisterForm extends Component {
       <React.Fragment>
         <StickyHeader />
         <Card style={{ margin: "auto" }}>
+          <Image src={logo} alt="" />
           <Card.Content>
             <Form onSubmit={this.handleRegister}>
               <h1>Register</h1>
