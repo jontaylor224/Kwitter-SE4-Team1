@@ -20,7 +20,7 @@ class UserProfile extends Component {
             {/* <Moment format="MM/DD/YYYY">{this.props.createdAt}</Moment> */}
             {moment(this.props.createdAt).format('MMMM DD YYYY')}
           </Card.Meta>
-          <Card>
+          <Card style={{ backgroundColor: '#ffa366' }}>
             <Card.Content>
               <Card.Header as="h4">Bio:</Card.Header>
               <Card.Description>

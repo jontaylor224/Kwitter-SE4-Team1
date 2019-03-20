@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import { Menu, Button } from "semantic-ui-react";
+import { Menu, Button, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import UserImage from "./UserImage";
 import { logoutThenGoToLogin as logout } from "../actions";
+import logo from "../squirrellogo.png";
 
 class StickyHeader extends Component {
   handleLogout = () => {
@@ -16,25 +17,32 @@ class StickyHeader extends Component {
           {this.props.login !== null ? (
             <React.Fragment>
               <Menu.Item>
+                <Image src={logo} alt="" style={{width:"50px"}}/>
+              </Menu.Item>
+              <Menu.Item>
                 <Link to="/home">
-                  <Button style={{ backgroundColor: "#e6ffff" }}>Home</Button>
+                  <Button style={{ backgroundColor: "#ffa366" }}>
+                    Home
+                  </Button>
                 </Link>
               </Menu.Item>
               <Menu.Item>
                 <Link to="/profile">
-                  <Button style={{ backgroundColor: "#e6ffff" }}>
+                  <Button style={{ backgroundColor: "#ffa366" }}>
                     Profile
                   </Button>
                 </Link>
               </Menu.Item>
               <Menu.Menu position="right">
                 <Menu.Item>
-                  <span style={{marginRight:'10px'}}>{this.props.displayName}</span>
+                  <span style={{ marginRight: "10px" }}>
+                    {this.props.displayName}
+                  </span>
                   <UserImage userId={this.props.login.id} size="mini" />
                 </Menu.Item>
                 <Menu.Item>
                   <Button
-                    style={{ backgroundColor: "#e6ffff" }}
+                    style={{ backgroundColor: "#ffa366" }}
                     onClick={this.handleLogout}
                   >
                     Logout
@@ -46,12 +54,14 @@ class StickyHeader extends Component {
             <React.Fragment>
               <Menu.Item>
                 <Link to="/">
-                  <Button style={{ backgroundColor: "#e6ffff" }}>Login</Button>
+                  <Button style={{ backgroundColor: "#ffa366" }}>
+                    Login
+                  </Button>
                 </Link>
               </Menu.Item>
               <Menu.Item>
                 <Link to="/register">
-                  <Button style={{ backgroundColor: "#e6ffff" }}>
+                  <Button style={{ backgroundColor: "#ffa366" }}>
                     Register
                   </Button>
                 </Link>

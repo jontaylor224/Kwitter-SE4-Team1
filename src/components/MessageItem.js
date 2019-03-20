@@ -31,7 +31,7 @@ export class MessageItem extends Component {
           </Feed.Label>
           <Feed.Content>
             <Feed.Summary>
-              <Feed.User>
+              <Feed.User style={{color:"black"}}>
                 {this.props.displayName}
               </Feed.User>
               <Feed.Date>
