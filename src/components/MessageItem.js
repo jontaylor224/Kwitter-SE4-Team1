@@ -24,8 +24,7 @@ export class MessageItem extends Component {
           </Feed.Label>
           <Feed.Content>
             <Feed.Summary>
-              <Feed.User>{this.props.message.userId}</Feed.User> posted on this
-              page
+              <Feed.User>{this.props.message.userId}</Feed.User> kweeted on
               <Feed.Date>{this.props.message.createdAt}</Feed.Date>
             </Feed.Summary>
             <Feed.Extra>{this.props.message.text}</Feed.Extra>
