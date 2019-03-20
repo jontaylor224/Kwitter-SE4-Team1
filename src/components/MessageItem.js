@@ -38,9 +38,9 @@ export class MessageItem extends Component {
                   ? 0
                   : this.props.message.likes.length}
               </Feed.Like>
-              <Feed.Like>
+              {/* <Feed.Like>
                 <Icon name="thumbs down" />4 Dislikes
-              </Feed.Like>
+              </Feed.Like> */}
             </Feed.Meta>
           </Feed.Content>
         </Feed.Event>
