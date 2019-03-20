@@ -1,13 +1,8 @@
 html,body {
   margin: 0;
   padding: 0;
-  
   height:100%;
-  
-  
 }
-
-
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -21,7 +16,6 @@ code {
   justify-content: center;
 }
 
-
 #landingpageleft{
   background-color: aqua;
   height:500px;
@@ -32,7 +26,6 @@ code {
   background-size: cover;
 }
 
-/*background-image: linear-gradient(to //right, aqua , white);*/
 #landingpageright{
   background-color:#b3fff0;
 }
@@ -58,9 +51,4 @@ code {
   background-color: #b3ccff;
   border-bottom:1px solid grey;
 }
-
-.ui.card{
-  width:100%;
-}
-
 
