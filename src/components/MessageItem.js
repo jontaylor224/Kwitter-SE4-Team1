@@ -40,11 +40,11 @@ export class MessageItem extends Component {
               <Feed.Like onClick={this.handleAddLike}>
                 <Icon name="like" />
                 {this.props.message.likes === undefined
-                  ? 0
-                  : this.props.message.likes.length}
+                  ? 0+" Likes"
+                  : this.props.message.likes.length+" Likes"}
               </Feed.Like>
               <Feed.Like>
-                <Icon name="thumbs down" onClick={this.handleDeleteLike}/>4 Dislikes
+                <Icon name="thumbs down" onClick={this.handleDeleteLike}/>
               </Feed.Like>
             </Feed.Meta>
           </Feed.Content>
