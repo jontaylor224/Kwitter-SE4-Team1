@@ -24,7 +24,7 @@ export default class ProfilePage extends Component {
             <Grid.Column floated="right" width={10}>
               <Segment>
                 <Header as="h2" textAlign="center">
-                  My Messages
+                  My Kweets
                 </Header>
                 <MessageList />
               </Segment>{" "}
