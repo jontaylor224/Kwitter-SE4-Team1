@@ -30,6 +30,7 @@ class RegisterForm extends Component {
                 <Form.Input
                   placeholder="Username"
                   name="username"
+                  required
                   fluid
                   autoFocus
                   label="Username"
@@ -38,6 +39,7 @@ class RegisterForm extends Component {
                 <Form.Input
                   placeholder="New display name"
                   name="displayName"
+                  required
                   fluid
                   label="Display name"
                   onChange={this.handleChange}

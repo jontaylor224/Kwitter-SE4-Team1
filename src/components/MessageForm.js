@@ -30,7 +30,7 @@ class MessageForm extends Component {
               onChange={this.handleChange}
             />
           </Form.Field>
-          <Button type="submit">Submit</Button>
+          <Button type="submit">Kweet</Button>
         </Form>
         </Card.Content>
       </Card>

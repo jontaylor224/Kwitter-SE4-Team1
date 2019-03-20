@@ -39,7 +39,6 @@ class LoginForm extends Component {
                   placeholder="Password"
                   name="password"
                   type="password"
-                  required
                   fluid
                   label="Password"
                   onChange={this.handleChange}
