@@ -3,6 +3,7 @@ import { Card } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { getLoggedInUserInfo } from "../actions";
 import UserAvatar from "./UserAvatar";
+import Moment from "react-moment";
 
 class UserProfile extends Component {
   componentDidMount() {
@@ -12,12 +13,19 @@ class UserProfile extends Component {
     return (
       <Card>
         <Card.Content>
-          <UserAvatar size="medium" />
-          <Card.Meta>User since {this.props.createdAt}.</Card.Meta>
-          <Card.Header as="h4">Bio:</Card.Header>
-          <Card.Description>
-            {this.props.about || "This user has not yet created a bio"}
-          </Card.Description>
+          <UserAvatar />
+          <Card.Meta>
+            Kweeting since{" "}
+            <Moment format="MM/DD/YYYY">{this.props.createdAt}</Moment>
+          </Card.Meta>
+          <Card>
+            <Card.Content>
+              <Card.Header as="h4">Bio:</Card.Header>
+              <Card.Description>
+                {this.props.about || "This user has not yet created a bio"}
+              </Card.Description>
+            </Card.Content>
+          </Card>
         </Card.Content>
       </Card>
     );
