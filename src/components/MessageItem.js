@@ -12,8 +12,15 @@ export class MessageItem extends Component {
     this.props.toggleAddLike(this.props.message.id);
   };
   handleDeleteLike = () => {
-    console.log(this.props.message.id);
-    this.props.toggleDeleteLike(this.props.likeId);
+    let curUserId = this.props.userId;
+    let curLike = this.props.message.likes.filter((like)=> {if(curUserId===like.userId){
+      return like;
+    }})
+    console.log(curLike);
+    if(curLike.length !== 0){
+      console.log(curLike[0].id)
+      this.props.toggleDeleteLike(curLike[0].id);
+    }
   };
   render() {
     return (
@@ -35,11 +42,11 @@ export class MessageItem extends Component {
               <Feed.Like onClick={this.handleAddLike}>
                 <Icon name="like" />
                 {this.props.message.likes === undefined
-                  ? 0
-                  : this.props.message.likes.length}
+                  ? 0+" Likes"
+                  : this.props.message.likes.length+" Likes"}
               </Feed.Like>
               <Feed.Like>
-                <Icon name="thumbs down" />4 Dislikes
+                <Icon name="thumbs down" onClick={this.handleDeleteLike}/>
               </Feed.Like>
             </Feed.Meta>
           </Feed.Content>
@@ -54,7 +61,7 @@ export default connect(
     isLoading: auth.loginLoading,
     err: auth.loginError,
     token: auth.login.token,
-    likeId: likes.likeId
+    userId:auth.login.id
   }),
   { toggleAddLike, toggleDeleteLike }
 )(MessageItem);

@@ -65,14 +65,15 @@ const register = registerData => dispatch => {
     });
 };
 
-const logout = logoutData => dispatch => {
+const logout = () => (dispatch,getState) => {
+  const token = getState().auth.login.token;
   dispatch({
     type: LOGOUT
   });
 
   return fetch(url + "/logout", {
     method: "GET",
-    headers: { jsonHeaders, Authorization: `Bearer ${logoutData}` }
+    headers: { jsonHeaders, Authorization: `Bearer ${token}` }
   })
     .then(handleJsonResponse)
     .then(result => {
@@ -97,5 +98,5 @@ export const registerThenGoToUserProfile = registerData => dispatch => {
 };
 
 export const logoutThenGoToLogin = logoutData => dispatch => {
-  return dispatch(logout(logoutData)).then(() => dispatch(push("/")));
+  return dispatch(logout()).then(() => dispatch(push("/")));
 };
