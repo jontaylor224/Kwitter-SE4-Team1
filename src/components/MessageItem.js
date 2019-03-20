@@ -13,15 +13,12 @@ export class MessageItem extends Component {
   };
   handleDeleteLike = () => {
     let curUserId = this.props.userId;
-    let curLike = this.props.message.likes.filter(like => {
-      if (curUserId === like.userId) {
-        return like;
-      }
-      return null;
-    });
+    let curLike = this.props.message.likes.filter((like)=> {if(curUserId===like.userId){
+      return like;
+    }})
     console.log(curLike);
-    if (curLike.length !== 0) {
-      console.log(curLike[0].id);
+    if(curLike.length !== 0){
+      console.log(curLike[0].id)
       this.props.toggleDeleteLike(curLike[0].id);
     }
   };
@@ -30,7 +27,7 @@ export class MessageItem extends Component {
       <Feed className="feedstyle">
         <Feed.Event>
           <Feed.Label>
-            <UserImage userId={this.props.message.userId} size="mini" />
+            <UserImage userId={this.props.message.userId} size='mini' />
           </Feed.Label>
           <Feed.Content>
             <Feed.Summary>
@@ -47,11 +44,11 @@ export class MessageItem extends Component {
               <Feed.Like onClick={this.handleAddLike}>
                 <Icon name="like" />
                 {this.props.message.likes === undefined
-                  ? 0 + " Likes"
-                  : this.props.message.likes.length + " Likes"}
+                  ? 0+" Likes"
+                  : this.props.message.likes.length+" Likes"}
               </Feed.Like>
               <Feed.Like>
-                <Icon name="thumbs down" onClick={this.handleDeleteLike} />
+                <Icon name="thumbs down" onClick={this.handleDeleteLike}/>
               </Feed.Like>
             </Feed.Meta>
           </Feed.Content>
