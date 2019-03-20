@@ -9,7 +9,7 @@ export class UserItem extends Component {
         <Feed.Event>
           <Feed.Content>
             <Feed.Summary>
-              <Feed.User>{this.props.displayName}</Feed.User>
+              <Feed.User style={{ color: "black" }}>{this.props.displayName}</Feed.User>
               {/* <Feed.Date>
                 <Moment>{this.props.createdAt}</Moment>
               </Feed.Date> */}

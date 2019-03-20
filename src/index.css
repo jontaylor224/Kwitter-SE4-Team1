@@ -40,15 +40,14 @@ code {
   height:100%;
 }
 .feedstyle:nth-child(even){
-  background-color:#ccffff;
+  background-color: #ffa366;
 }
 
 .feedstyle:hover { 
-  background-color:#99ffff;
+  background-color:#fc771e;
 }
 
 #menubar{
-  background-color: #b3ccff;
   border-bottom:1px solid grey;
 }
 
