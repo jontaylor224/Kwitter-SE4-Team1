@@ -45,17 +45,20 @@ export const addLike = messageId => (dispatch, getState) => {
 };
 
 export const deleteLike = likeId => (dispatch, getState) => {
-  return function(dispatch, getState) {
-    let token = getState().auth.login.token;
-    return fetch(url+"/"+likeId, {
+  const token = getState().auth.login.token;
+  dispatch({ type: DELETE_LIKE });
+    
+    return fetch(`${url}/${likeId}`, {
       method: "DELETE",
       headers: {
         ...jsonHeaders,
         Authorization: "Bearer " + token
       }
     })
+      .then(handleJsonResponse)
       .then(result => {
         if (result) {
+          console.log(result)
           dispatch({
             type: DELETE_LIKE,
             payload: result
@@ -64,6 +67,6 @@ export const deleteLike = likeId => (dispatch, getState) => {
       })
       .catch(err => console.log(err));
   };
-};
+
 
 export default addLike;
