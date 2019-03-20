@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import { Feed, Icon } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { toggleAddLike, toggleDeleteLike } from "../actions";
-import Moment from "react-moment";
+// import Moment from "react-moment";
+import UserImage from "./UserImage";
+import moment from "moment";
 
 export class MessageItem extends Component {
   handleAddLike = e => {
@@ -18,16 +20,14 @@ export class MessageItem extends Component {
       <Feed className="feedstyle">
         <Feed.Event>
           <Feed.Label>
-            <img
-              src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg"
-              alt=""
-            />
+            <UserImage userId={this.props.message.userId} size='mini' />
           </Feed.Label>
           <Feed.Content>
             <Feed.Summary>
               <Feed.User>{this.props.message.userId}</Feed.User>
               <Feed.Date>
-                <Moment fromNow ago>{this.props.message.createdAt}</Moment> ago.
+                {/* <Moment fromNow ago>{this.props.message.createdAt}</Moment> ago. */}
+                {moment(this.props.message.createdAt).fromNow()}
               </Feed.Date>
             </Feed.Summary>
             <Feed.Extra>{this.props.message.text}</Feed.Extra>
