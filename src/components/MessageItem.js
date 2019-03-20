@@ -31,7 +31,9 @@ export class MessageItem extends Component {
           </Feed.Label>
           <Feed.Content>
             <Feed.Summary>
-              <Feed.User>{this.props.message.userId}</Feed.User>
+              <Feed.User>
+                {this.props.displayName}
+              </Feed.User>
               <Feed.Date>
                 {/* <Moment fromNow ago>{this.props.message.createdAt}</Moment> ago. */}
                 {moment(this.props.message.createdAt).fromNow()}
@@ -57,11 +59,11 @@ export class MessageItem extends Component {
 }
 
 export default connect(
-  ({ auth, likes }) => ({
+  ({ auth }) => ({
     isLoading: auth.loginLoading,
     err: auth.loginError,
     token: auth.login.token,
-    userId:auth.login.id
+    userId: auth.login.id
   }),
   { toggleAddLike, toggleDeleteLike }
 )(MessageItem);
