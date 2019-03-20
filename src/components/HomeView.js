@@ -21,6 +21,7 @@ export class HomeView extends Component {
               </Card>
               <Card>
                 <Card.Content>
+                  <Card.Header>Kweeters</Card.Header>
                   <UserList />
                 </Card.Content>
               </Card>
