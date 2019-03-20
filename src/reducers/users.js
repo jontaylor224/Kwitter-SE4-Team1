@@ -82,6 +82,7 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 uploadImageResult: action.uploadImageResult
+            }
         case GET_USERS:
             return state
         case GET_USERS_SUCCESS:
