@@ -25,10 +25,10 @@ export class MessageItem extends Component {
           </Feed.Label>
           <Feed.Content>
             <Feed.Summary>
-              <Feed.User>{this.props.message.userId}</Feed.User> kweeted on
+              <Feed.User>{this.props.message.userId}</Feed.User> kweeted
               <Feed.Date>
-                <Moment toNow>{this.props.message.createdAt}</Moment>
-              </Feed.Date>
+                <Moment fromNow ago>{this.props.message.createdAt}</Moment>
+              </Feed.Date> ago.
             </Feed.Summary>
             <Feed.Extra>{this.props.message.text}</Feed.Extra>
             <Feed.Meta>
