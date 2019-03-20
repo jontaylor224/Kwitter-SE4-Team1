@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid } from "semantic-ui-react";
+import { Grid, Card } from "semantic-ui-react";
 import MessageForm from "./MessageForm";
 import StickyHeader from "./StickyHeader";
 import MessageList from "./MessageList";
@@ -14,12 +14,24 @@ export class HomeView extends Component {
         <Grid container stackable>
           <Grid.Row columns={2}>
             <Grid.Column width={5}>
-              <UserAvatar />
-              <UserList />
+              <Card>
+                <Card.Content>
+                  <UserAvatar />
+                </Card.Content>
+              </Card>
+              <Card>
+                <Card.Content>
+                  <UserList />
+                </Card.Content>
+              </Card>
             </Grid.Column>
             <Grid.Column width={10}>
               <MessageForm />
-              <MessageList />
+              <Card style={{width:"100%"}}>
+                <Card.Content>
+                  <MessageList />
+                </Card.Content>
+              </Card>
             </Grid.Column>
           </Grid.Row>
         </Grid>
