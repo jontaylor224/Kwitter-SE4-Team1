@@ -1,22 +1,12 @@
 import React, { Component } from "react";
 import { Feed, Icon } from "semantic-ui-react";
 import { connect } from "react-redux";
-import { toggleAddLike, toggleDeleteLike, getUsers } from "../actions";
+import { toggleAddLike, toggleDeleteLike } from "../actions";
 // import Moment from "react-moment";
 import UserImage from "./UserImage";
 import moment from "moment";
 
 export class MessageItem extends Component {
-  componentDidMount() {
-    this.props.getUsers()
-  }
-
-  matchIdtoUsername = userId => {
-    let user = this.props.userList.find(user => user.id === userId);
-    if (user) return user.displayName;
-    return "Deleted";
-  };
-
   handleAddLike = e => {
     console.log(this.props.message.id);
     this.props.toggleAddLike(this.props.message.id);
@@ -45,7 +35,7 @@ export class MessageItem extends Component {
           <Feed.Content>
             <Feed.Summary>
               <Feed.User>
-                {this.matchIdtoUsername(this.props.message.userId)}
+                {this.props.displayName}
               </Feed.User>
               <Feed.Date>
                 {/* <Moment fromNow ago>{this.props.message.createdAt}</Moment> ago. */}
@@ -72,12 +62,11 @@ export class MessageItem extends Component {
 }
 
 export default connect(
-  ({ auth , users}) => ({
+  ({ auth }) => ({
     isLoading: auth.loginLoading,
     err: auth.loginError,
     token: auth.login.token,
-    userId: auth.login.id,
-    userList: users.userList
+    userId: auth.login.id
   }),
-  { toggleAddLike, toggleDeleteLike ,getUsers}
+  { toggleAddLike, toggleDeleteLike }
 )(MessageItem);
