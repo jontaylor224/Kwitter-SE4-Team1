@@ -39,7 +39,7 @@ export class MessageItem extends Component {
               </Feed.User>
               <Feed.Date>
                 {/* <Moment fromNow ago>{this.props.message.createdAt}</Moment> ago. */}
-                {moment(this.props.message.createdAt).fromNow()}
+                {moment(this.props.message.createdAt).utcOffset(0, true).fromNow()}
               </Feed.Date>
             </Feed.Summary>
             <Feed.Extra>{this.props.message.text}</Feed.Extra>
