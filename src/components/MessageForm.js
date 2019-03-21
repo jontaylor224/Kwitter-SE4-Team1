@@ -29,7 +29,7 @@ class MessageForm extends Component {
               onChange={this.handleChange}
             />
           </Form.Field>
-          <Button type="submit">Kweet</Button>
+            <Button type="submit" style={{ backgroundColor: "#ffa366"}}>Kweet</Button>
         </Form>
         </Card.Content>
       </Card>

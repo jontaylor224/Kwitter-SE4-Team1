@@ -4,7 +4,7 @@ import { loginThenGoToUserProfile as login } from "../actions";
 import Spinner from "react-spinkit";
 import StickyHeader from "./StickyHeader";
 import { Form, FormField, Card, Button, Image } from "semantic-ui-react";
-import logo from "../squirrellogo.png"
+import logo from "../squirrellogo.png";
 
 class LoginForm extends Component {
   state = { username: "", password: "" };
@@ -23,11 +23,11 @@ class LoginForm extends Component {
     return (
       <React.Fragment>
         <StickyHeader />
-        <Card style={{margin:'auto'}}>
-        <Image src={logo} alt=''/>
+        <Card style={{ margin: "auto" }}>
+          <Image src={logo} alt="" />
           <Card.Content>
             <Form onSubmit={this.handleLogin}>
-              <h1>Login</h1>
+              <h1 style={{ textAlign: "center" }}>Login</h1>
               <FormField>
                 <Form.Input
                   placeholder="Username"
@@ -48,9 +48,15 @@ class LoginForm extends Component {
                 {isLoading && <Spinner name="circle" color="blue" />}
                 {err && <p style={{ color: "red" }}>{err}</p>}
               </FormField>
-              <Button type="submit" disabled={isLoading}>
-                Submit
-              </Button>
+              <div style={{ textAlign: "center" }}>
+                <Button
+                  type="submit"
+                  disabled={isLoading}
+                  style={{ backgroundColor: "#ffa366" }}
+                >
+                  Submit
+                </Button>
+              </div>
             </Form>
           </Card.Content>
         </Card>

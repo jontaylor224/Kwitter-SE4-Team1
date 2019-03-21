@@ -1,53 +1,18 @@
-html,body {
+html,
+body {
   margin: 0;
   padding: 0;
-  height:100%;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-.right{
-  display:inline-block;
+  height: 100%;
 }
 
 .menu {
   justify-content: center;
 }
 
-#landingpageleft{
-  background-color: aqua;
-  height:500px;
-  text-align:center;
-  background-image: url("./marble.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-#landingpageright{
-  background-color:#b3fff0;
-}
-
-#landingpageparent{
-  height:100%;
-  margin-top:100px;
-  border:1px solid #b3ccff;
-  text-align:center;
-}
-.ui vertically divided grid{
-  height:100%;
-}
-.feedstyle:nth-child(even){
+.feedstyle:nth-child(even) {
   background-color: #ffa366;
 }
 
-.feedstyle:hover { 
-  background-color:#fc771e;
+.feedstyle:hover {
+  background-color: #fc771e;
 }
-
-#menubar{
-  border-bottom:1px solid grey;
-}
-
