@@ -53,7 +53,7 @@ export default (state = initialState, action) => {
         logoutError: null
       };
     case LOGOUT_SUCCESS:
-      return { ...state, login: null, loginLoading: false };
+      return { ...state, login: null };
     case LOGOUT_FAIL:
       return { ...state, logoutError: action.payload, logoutLoading: false };
 

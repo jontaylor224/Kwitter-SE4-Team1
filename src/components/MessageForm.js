@@ -20,12 +20,11 @@ class MessageForm extends Component {
 
   render() {
     return (
-      <Card style={{width:"100%"}}>
+      <Card style={{width:"100%", textAlign:"center"}}>
         <Card.Content>
         <Form onSubmit={this.handleCreateMessage}>
           <Form.Field>
             <Form.Input fluid
-              label="Kweet it"
               placeholder="Enter kweet..."
               onChange={this.handleChange}
             />

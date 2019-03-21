@@ -13,17 +13,15 @@ class StickyHeader extends Component {
   render() {
     return (
       <React.Fragment>
-        <Menu secondary id="menubar">
-          {this.props.login !== null ? (
+        {this.props.login !== null ? (
+          <Menu id="menubar">
             <React.Fragment>
               <Menu.Item>
-                <Image src={logo} alt="" style={{width:"50px"}}/>
+                <Image src={logo} alt="" style={{ width: "50px" }} />
               </Menu.Item>
               <Menu.Item>
                 <Link to="/home">
-                  <Button style={{ backgroundColor: "#ffa366" }}>
-                    Home
-                  </Button>
+                  <Button style={{ backgroundColor: "#ffa366" }}>Home</Button>
                 </Link>
               </Menu.Item>
               <Menu.Item>
@@ -50,13 +48,13 @@ class StickyHeader extends Component {
                 </Menu.Item>
               </Menu.Menu>
             </React.Fragment>
-          ) : (
+          </Menu>
+        ) : (
+          <Menu secondary id="menubar">
             <React.Fragment>
               <Menu.Item>
                 <Link to="/">
-                  <Button style={{ backgroundColor: "#ffa366" }}>
-                    Login
-                  </Button>
+                  <Button style={{ backgroundColor: "#ffa366" }}>Login</Button>
                 </Link>
               </Menu.Item>
               <Menu.Item>
@@ -67,8 +65,8 @@ class StickyHeader extends Component {
                 </Link>
               </Menu.Item>
             </React.Fragment>
-          )}
-        </Menu>
+          </Menu>
+        )}
       </React.Fragment>
     );
   }

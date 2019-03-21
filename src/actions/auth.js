@@ -78,16 +78,12 @@ const logout = () => (dispatch,getState) => {
     .then(handleJsonResponse)
     .then(result => {
       return dispatch({
-        type: LOGOUT_SUCCESS,
-        payload: result
+        type: LOGOUT_SUCCESS
       });
     })
-    .catch(err => {
-      return Promise.reject(
-        dispatch({ type: LOGOUT_FAIL, payload: err.message })
-      );
-    });
 };
+
+
 
 export const loginThenGoToUserProfile = loginData => dispatch => {
   return dispatch(login(loginData)).then(() => dispatch(push("/profile")));
@@ -98,6 +94,6 @@ export const registerThenGoToUserProfile = registerData => dispatch => {
 };
 
 export const logoutThenGoToLogin = logoutData => dispatch => {
-   dispatch(push("/"))
-   return dispatch(logout())
+  dispatch(push("/")) 
+  return dispatch(logout(logoutData))
 };
