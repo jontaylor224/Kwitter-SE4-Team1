@@ -45,7 +45,7 @@ export class MessageItem extends Component {
             <Feed.Extra>{this.props.message.text}</Feed.Extra>
             <Feed.Meta>
               <Feed.Like onClick={this.handleAddLike}>
-                <Icon name="like" />
+                <Icon name="like" color='white' />
                 {this.props.message.likes === undefined
                   ? 0 + " Likes"
                   : this.props.message.likes.length + " Likes"}
