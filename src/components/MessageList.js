@@ -1,52 +1,77 @@
-import React, { Component } from "react";
-import MessageItem from "./MessageItem";
-import {getMessages, getUsers } from "../actions";
-import { connect } from "react-redux";
+import React, { Component } from "react"
+import MessageItem from "./MessageItem"
+import { getMessages, getUsers } from "../actions"
+import { connect } from "react-redux"
+import InfiniteScroll from "react-infinite-scroll-component"
 
 export class MessageList extends Component {
-  state = { messages: [] };
-  componentDidMount() {
-    this.props.getMessages();
-    this.props.getUsers();
-  }
-  matchIdtoUsername = userId => {
-    let user = this.props.userList.find(user => user.id === userId);
-    if (user) return user.displayName;
-    return "Deleted";
-  };
+    state = { hasMore: true}
+    componentDidMount() {
+        this.props.getMessages(20, this.props.offset)
+        this.props.getUsers()
+    }
+    matchIdtoUsername = userId => {
+        let user = this.props.userList.find(user => user.id === userId)
+        if (user) return user.displayName
+        return "Deleted"
+    }
 
-  render() {
-    return (
-      <React.Fragment>
-        {this.props.messages.messages.map(message => (
-          <MessageItem
-            key={message.id}
-            message={message}
-            displayName={this.matchIdtoUsername(message.userId)}
-          />
-        ))}
-      </React.Fragment>
-    );
-  }
+    fetchMoreData = () => {
+        if (this.props.messages.endOfMessages) {
+            this.setState({ hasMore: false })
+        } else {
+            this.setState({ offset: this.props.offset + 20 }, () =>
+                this.props.getMessages(20, this.props.offset)
+            )
+        }
+    }
+
+    render() {
+        return (
+            <React.Fragment>
+                <InfiniteScroll
+                    dataLength={this.props.messages.messages.length}
+                    next={this.fetchMoreData}
+                    hasMore={this.state.hasMore}
+                    height={400}
+                    // loader={<h4>Loading...</h4>}
+                    endMessage={
+                        <p style={{ textAlign: "center" }}>End of messages.</p>
+                    }
+                >
+                    {this.props.messages.messages.map(message => (
+                        <MessageItem
+                            key={message.id}
+                            message={message}
+                            displayName={this.matchIdtoUsername(message.userId)}
+                        />
+                    ))}
+                </InfiniteScroll>
+            </React.Fragment>
+        )
+    }
 }
 
 const mapStateToProps = state => ({
-  messages: state.messages,
-  userList: state.users.userList
-});
+    messages: state.messages,
+    userList: state.users.userList,
+    isMessageLoading: state.messages.getMessageLoading,
+    endOfMessages: state.messages.endOfMessages,
+    offset: state.messages.offset
+})
 
 const mapDispatchToProps = dispatch => {
-  return {
-    getMessages: () => {
-      dispatch(getMessages());
-    },
-    getUsers: () => {
-      dispatch(getUsers())
+    return {
+        getMessages: (limit, offset) => {
+            dispatch(getMessages(limit, offset))
+        },
+        getUsers: () => {
+            dispatch(getUsers())
+        }
     }
-  };
-};
+}
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(MessageList);
+    mapStateToProps,
+    mapDispatchToProps
+)(MessageList)
