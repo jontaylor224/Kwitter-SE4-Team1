@@ -98,5 +98,6 @@ export const registerThenGoToUserProfile = registerData => dispatch => {
 };
 
 export const logoutThenGoToLogin = logoutData => dispatch => {
-  return dispatch(logout()).then(() => dispatch(push("/")));
+   dispatch(push("/"))
+   return dispatch(logout())
 };
