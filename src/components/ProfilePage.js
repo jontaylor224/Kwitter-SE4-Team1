@@ -3,7 +3,7 @@ import StickyHeader from "./StickyHeader";
 import UserProfile from "./UserProfile";
 import { Grid, Segment, Header, Card } from "semantic-ui-react";
 import UpdateProfileForm from "./UpdateProfileForm";
-import MessageList from "./MessageList";
+import UserMessageList from "./UserMessageList";
 import UpdateProfilePicture from "./UpdateProfilePicture";
 
 export default class ProfilePage extends Component {
@@ -26,7 +26,7 @@ export default class ProfilePage extends Component {
                 <Header as="h2" textAlign="center">
                   My Kweets
                 </Header>
-                <MessageList />
+                <UserMessageList />
               </Segment>{" "}
             </Grid.Column>
           </Grid.Row>
