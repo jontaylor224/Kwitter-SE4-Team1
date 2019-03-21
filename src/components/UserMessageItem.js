@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Feed, Icon } from "semantic-ui-react";
+import { Feed } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { toggleAddLike, toggleDeleteLike } from "../actions";
 // import Moment from "react-moment";
