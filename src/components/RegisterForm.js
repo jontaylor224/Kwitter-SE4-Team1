@@ -24,10 +24,10 @@ class RegisterForm extends Component {
       <React.Fragment>
         <StickyHeader />
         <Card style={{ margin: "auto" }}>
-          <Image src={logo} alt='' />
+          <Image src={logo} alt="" />
           <Card.Content>
             <Form onSubmit={this.handleRegister}>
-              <h1>Register</h1>
+              <h1 style={{ textAlign: "center" }}>Register</h1>
               <FormField>
                 <Form.Input
                   placeholder="Username"
@@ -67,9 +67,15 @@ class RegisterForm extends Component {
                 {isLoading && <Spinner name="circle" color="blue" />}
                 {err && <p style={{ color: "red" }}>{err}</p>}
               </FormField>
-              <Button type="submit" disabled={isLoading}>
-                Submit
-              </Button>
+              <div style={{ textAlign: "center" }}>
+                <Button
+                  type="submit"
+                  disabled={isLoading}
+                  style={{ backgroundColor: "#ffa366" }}
+                >
+                  Submit
+                </Button>
+              </div>
             </Form>
           </Card.Content>
         </Card>
