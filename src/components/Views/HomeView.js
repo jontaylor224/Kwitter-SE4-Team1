@@ -21,17 +21,13 @@ export class HomeView extends Component {
                   <UserAvatar />
                 </Card.Content>
               </Card>
-              <Card>
-                <Card.Content>
-                  <Card.Header>Kweeters</Card.Header>
+                
                   <UserList />
-                </Card.Content>
-              </Card>
+                
             </Grid.Column>
             <Grid.Column floated="right" width={10}>
               <MessageForm />
-              
-                  <MessageList />
+              <MessageList />
             </Grid.Column>
           </Grid.Row>
         </Grid>
