@@ -35,7 +35,7 @@ export class MessageList extends Component {
             dataLength={this.props.messages.messages.length}
             next={this.fetchMoreData}
             hasMore={this.state.hasMore}
-            height={400}
+            height={500}
             // loader={<h4>Loading...</h4>}
             endMessage={<p style={{ textAlign: "center" }}>End of messages.</p>}
           >

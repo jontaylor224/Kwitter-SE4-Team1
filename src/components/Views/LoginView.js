@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { loginThenGoToUserProfile as login } from "../../actions";
 import Spinner from "react-spinkit";
 import StickyHeader from "../StickyHeader";
-import { Form, FormField, Card, Button, Image } from "semantic-ui-react";
+import { Form, FormField, Card, Button, Image, Header } from "semantic-ui-react";
 import logo from "../../img/squirrellogo.png";
 
 class LoginView extends Component {
@@ -25,6 +25,7 @@ class LoginView extends Component {
         <StickyHeader />
         <Card style={{ margin: "auto" }}>
           <Image src={logo} alt="" />
+          <Header style={{textAlign:"center", fontSize:"50px"}}>Kwitter</Header>
           <Card.Content>
             <Form onSubmit={this.handleLogin}>
               <h1 style={{ textAlign: "center" }}>Login</h1>
