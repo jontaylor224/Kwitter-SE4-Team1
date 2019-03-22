@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { registerThenGoToUserProfile as register } from "../actions";
+import { loginThenGoToUserProfile as login } from "../actions";
 import Spinner from "react-spinkit";
 import StickyHeader from "./StickyHeader";
 import { Form, FormField, Card, Button, Image } from "semantic-ui-react";
 import logo from "../squirrellogo.png";
 
-class RegisterForm extends Component {
+class LoginView extends Component {
   state = { username: "", password: "" };
 
-  handleRegister = e => {
+  handleLogin = e => {
     e.preventDefault();
-    this.props.register(this.state);
+    this.props.login(this.state);
   };
 
   handleChange = e => {
@@ -26,42 +26,23 @@ class RegisterForm extends Component {
         <Card style={{ margin: "auto" }}>
           <Image src={logo} alt="" />
           <Card.Content>
-            <Form onSubmit={this.handleRegister}>
-              <h1 style={{ textAlign: "center" }}>Register</h1>
+            <Form onSubmit={this.handleLogin}>
+              <h1 style={{ textAlign: "center" }}>Login</h1>
               <FormField>
                 <Form.Input
                   placeholder="Username"
                   name="username"
-                  required
                   fluid
                   autoFocus
                   label="Username"
                   onChange={this.handleChange}
                 />
                 <Form.Input
-                  placeholder="New display name"
-                  name="displayName"
-                  required
-                  fluid
-                  label="Display name"
-                  onChange={this.handleChange}
-                />
-                <Form.Input
                   placeholder="Password"
                   name="password"
                   type="password"
-                  required
                   fluid
                   label="Password"
-                  onChange={this.handleChange}
-                />
-                <Form.Input
-                  placeholder="Confirm Password"
-                  name="password"
-                  type="password"
-                  required
-                  fluid
-                  label="Confirm Password"
                   onChange={this.handleChange}
                 />
                 {isLoading && <Spinner name="circle" color="blue" />}
@@ -87,7 +68,7 @@ class RegisterForm extends Component {
 export default connect(
   ({ auth }) => ({
     isLoading: auth.loginLoading,
-    err: auth.registerError
+    err: auth.loginError
   }),
-  { register }
-)(RegisterForm);
+  { login }
+)(LoginView);

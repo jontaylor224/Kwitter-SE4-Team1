@@ -6,7 +6,7 @@ import UpdateProfileForm from "./UpdateProfileForm";
 import UserMessageList from "./UserMessageList";
 import UpdateProfilePicture from "./UpdateProfilePicture";
 
-export default class ProfilePage extends Component {
+export default class ProfileView extends Component {
   render() {
     return (
       <React.Fragment>
