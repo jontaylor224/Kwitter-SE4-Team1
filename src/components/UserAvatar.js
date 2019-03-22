@@ -10,7 +10,7 @@ class UserAvatar extends Component {
     }
     render() {
         return (
-          <Card style={{ backgroundColor: "#ffa366" }}>
+          <Card style={{ backgroundColor: "#ffa366", margin:'auto' }}>
             <Card.Content>
               <UserImage
                 userId={this.props.userId}

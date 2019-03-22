@@ -12,7 +12,7 @@ class UserProfile extends Component {
   }
   render() {
     return (
-      <Card>
+      <Card style={{margin:'auto'}}>
         <Card.Content>
           <UserAvatar />
           <Card.Meta>

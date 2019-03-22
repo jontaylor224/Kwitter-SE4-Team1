@@ -11,7 +11,7 @@ export class UserList extends Component {
   }
   render() {
     return (
-      <Card style={{height:'305px', overflow:"scroll"}}>
+      <Card style={{height:'305px', overflow:"scroll", margin:'auto', marginTop:'30px'}}>
         <Card.Content>
           <Card.Header>Kweeters</Card.Header>
           {this.props.userList.map(user => (
