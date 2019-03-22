@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import UserMessageItem from "./UserMessageItem";
+import ProfileMessageItem from "./ProfileMessageItem";
 import { connect } from "react-redux";
 import { Card } from "semantic-ui-react";
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -41,7 +41,7 @@ export class UserMessageList extends Component {
                 return b.id - a.id;
               })
               .map(message => (
-                <UserMessageItem
+                <ProfileMessageItem
                   key={message.id}
                   message={message}
                   displayName={this.props.loggedInUser.displayName}

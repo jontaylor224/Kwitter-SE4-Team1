@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import StickyHeader from "../StickyHeader";
 import UserProfile from "../UserProfile";
 import UpdateProfileForm from "../UpdateProfileForm";
-import UserMessageList from "../UserMessageList";
+import ProfileMessageFeed from "../ProfileMessageFeed";
 import UpdateProfilePicture from "../UpdateProfilePicture";
 
 import { Grid, Segment, Card } from "semantic-ui-react";
@@ -25,7 +25,7 @@ export default class ProfileView extends Component {
             </Grid.Column>
             <Grid.Column floated="right" width={10}>
               <Segment>
-                <UserMessageList />
+                <ProfileMessageFeed />
               </Segment>{" "}
             </Grid.Column>
           </Grid.Row>

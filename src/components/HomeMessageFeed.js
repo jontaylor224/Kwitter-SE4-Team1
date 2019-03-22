@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import MessageItem from "./MessageItem";
+import HomeMessageItem from "./HomeMessageItem";
 import { getMessages, getUsers } from "../actions";
 import { connect } from "react-redux";
 import { Card } from "semantic-ui-react";
@@ -43,7 +43,7 @@ export class MessageList extends Component {
             endMessage={<p style={{ textAlign: "center" }}>End of messages.</p>}
           >
             {this.props.messages.messages.map(message => (
-              <MessageItem
+              <HomeMessageItem
                 key={message.id}
                 message={message}
                 displayName={this.matchIdtoUsername(message.userId)}

@@ -3,7 +3,7 @@ import { Grid, Segment } from "semantic-ui-react";
 
 import MessageForm from "../MessageForm";
 import StickyHeader from "../StickyHeader";
-import MessageList from "../MessageList";
+import HomeMessageFeed from "../HomeMessageFeed";
 import UserAvatar from "../UserAvatar";
 import UserList from "../UserList";
 
@@ -22,7 +22,7 @@ export class HomeView extends Component {
             <Grid.Column floated="right" width={10}>
               <MessageForm />
               <Segment>
-                <MessageList />
+                <HomeMessageFeed />
               </Segment>
             </Grid.Column>
           </Grid.Row>
