@@ -3,15 +3,13 @@ import {
   ADD_LIKE_SUCCESS,
   ADD_LIKE_FAIL,
   DELETE_LIKE
-  
 } from "../actions";
 
 const initialState = {
   addLikeLoading: false,
   addLikeError: null,
-  likes:null,
-  likeId:null
-  
+  likes: null,
+  likeId: null
 };
 
 export default (state = initialState, action) => {
@@ -26,7 +24,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         addLikeLoading: false,
-        likes:action.payload
+        likes: action.payload
       };
     case ADD_LIKE_FAIL:
       return {
@@ -34,13 +32,14 @@ export default (state = initialState, action) => {
         addLikeError: action.payload,
         addLikeLoading: false
       };
+
     case DELETE_LIKE:
       return {
-        ...state, likeId:action.payload
+        ...state,
+        likeId: action.payload
       };
 
     default:
       return state;
   }
 };
-

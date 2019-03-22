@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import UserImage from "./UserImage";
 import { logoutThenGoToLogin as logout } from "../actions";
-import logo from "../squirrellogo.png";
+import logo from "../img/squirrellogo.png";
 
 class StickyHeader extends Component {
   handleLogout = () => {
@@ -17,6 +17,7 @@ class StickyHeader extends Component {
           <Menu id="menubar">
             <React.Fragment>
               <Menu.Item>
+                Kwitter
                 <Image src={logo} alt="" style={{ width: "50px" }} />
               </Menu.Item>
               <Menu.Item>
