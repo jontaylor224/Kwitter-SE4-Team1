@@ -15,7 +15,7 @@ class UserProfile extends Component {
       <Card style={{margin:'auto'}}>
         <Card.Content>
           <UserAvatar />
-          <Card.Meta>
+          <Card.Meta style={{ marginTop:'10px'}}>
             Kweeting since{" "}
             {/* <Moment format="MM/DD/YYYY">{this.props.createdAt}</Moment> */}
             {moment(this.props.createdAt).format('MMMM DD YYYY')}
