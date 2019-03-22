@@ -7,9 +7,9 @@ import moment from "moment";
 
 export class MessageItem extends Component {
   handleAddLike = e => {
-    console.log(this.props.message.id);
     this.props.toggleAddLike(this.props.message.id);
   };
+
   handleDeleteLike = () => {
     let curUserId = this.props.userId;
     let curLike = this.props.message.likes.filter(like => {
@@ -18,12 +18,11 @@ export class MessageItem extends Component {
       }
       return null;
     });
-    console.log(curLike);
     if (curLike.length !== 0) {
-      console.log(curLike[0].id);
       this.props.toggleDeleteLike(curLike[0].id);
     }
   };
+  
   render() {
     return (
       <Feed className="feedstyle">
