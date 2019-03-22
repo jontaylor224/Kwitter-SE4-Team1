@@ -23,7 +23,7 @@ export const getMessages = (limit = 20, offset = 0) => dispatch => {
     })
         .then(handleJsonResponse)
         .then(result => {
-            console.log(result.messages)
+
             if (result.messages.length === 0) {
                 return dispatch({
                     type: END_OF_MESSAGES
