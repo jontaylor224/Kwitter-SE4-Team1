@@ -5,7 +5,10 @@ import {
   END_OF_MESSAGES,
   CREATE_MESSAGE,
   CREATE_MESSAGE_FAIL,
-  CREATE_MESSAGE_SUCCESS
+  CREATE_MESSAGE_SUCCESS,
+  GET_MESSAGE_BY_ID,
+  GET_MESSAGE_BY_ID_FAIL,
+  GET_MESSAGE_BY_ID_SUCCESS
 } from "../actions";
 
 const initialState = {
@@ -63,6 +66,27 @@ export default (state = initialState, action) => {
         ...state,
         createMessageError: action.payload,
         createMessageLoading: false
+      };
+
+    case GET_MESSAGE_BY_ID:
+      return {
+        ...state,
+        getMessageLoading: true,
+        getMessageError: null
+      };
+    case GET_MESSAGE_BY_ID_SUCCESS:
+      let newMessages = state.messages.slice()
+      newMessages.splice(action.index,1, action.payload.message)
+      return {
+        ...state,
+        messages: newMessages,
+        getMessageLoading: false
+      };
+    case GET_MESSAGE_BY_ID_FAIL:
+      return {
+        ...state,
+        getMessageError: action.payload,
+        getMessageLoading: false
       };
 
     default:

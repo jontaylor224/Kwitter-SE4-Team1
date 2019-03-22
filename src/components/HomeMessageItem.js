@@ -19,7 +19,7 @@ export class MessageItem extends Component {
       return null;
     });
     if (curLike.length !== 0) {
-      this.props.toggleDeleteLike(curLike[0].id);
+      this.props.toggleDeleteLike(curLike[0].id,this.props.message.id);
     }
   };
   

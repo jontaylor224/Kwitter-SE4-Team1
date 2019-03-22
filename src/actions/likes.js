@@ -1,5 +1,5 @@
 import { domain, jsonHeaders, handleJsonResponse } from "./constants";
-import { getMessages } from "./getMessages.js";
+import { getMessageById } from "./getMessages.js";
 
 export const ADD_LIKE = "ADD_LIKE";
 export const ADD_LIKE_SUCCESS = "ADD_LIKE_SUCCESS";
@@ -9,13 +9,13 @@ const url = domain + "/likes";
 
 export const toggleAddLike = messageId => (dispatch) => {
   dispatch(addLike(messageId)).then(() => {
-    dispatch(getMessages());
+    dispatch(getMessageById(messageId));
   });
 };
 
-export const toggleDeleteLike = likeId => (dispatch) => {
+export const toggleDeleteLike = (likeId,messageId) => (dispatch) => {
   dispatch(deleteLike(likeId)).then(() => {
-    dispatch(getMessages());
+    dispatch(getMessageById(messageId));
   });
 };
 
