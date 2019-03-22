@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Feed, Icon } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { toggleAddLike, toggleDeleteLike } from "../actions";
-// import Moment from "react-moment";
 import UserImage from "./UserImage";
 import moment from "moment";
 
@@ -17,7 +16,7 @@ export class MessageItem extends Component {
       if (curUserId === like.userId) {
         return like;
       }
-      return null
+      return null;
     });
     console.log(curLike);
     if (curLike.length !== 0) {
@@ -38,14 +37,15 @@ export class MessageItem extends Component {
                 {this.props.displayName}
               </Feed.User>
               <Feed.Date>
-                {/* <Moment fromNow ago>{this.props.message.createdAt}</Moment> ago. */}
-                {moment(this.props.message.createdAt).utcOffset(0, true).fromNow()}
+                {moment(this.props.message.createdAt)
+                  .utcOffset(0, true)
+                  .fromNow()}
               </Feed.Date>
             </Feed.Summary>
             <Feed.Extra>{this.props.message.text}</Feed.Extra>
             <Feed.Meta>
               <Feed.Like onClick={this.handleAddLike}>
-                <Icon name="like" color='white' />
+                <Icon name="like"/>
                 {this.props.message.likes === undefined
                   ? 0 + " Likes"
                   : this.props.message.likes.length + " Likes"}
