@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import userIcon from "../userIcon.png"
+import userIcon from "../img/userIcon.png"
 import { connect } from "react-redux"
 import { Image } from "semantic-ui-react"
 import { domain } from "../actions/constants/index"

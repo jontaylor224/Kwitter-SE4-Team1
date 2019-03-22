@@ -4,7 +4,7 @@ import { loginThenGoToUserProfile as login } from "../../actions";
 import Spinner from "react-spinkit";
 import StickyHeader from "../StickyHeader";
 import { Form, FormField, Card, Button, Image } from "semantic-ui-react";
-import logo from "../../squirrellogo.png";
+import logo from "../../img/squirrellogo.png";
 
 class LoginView extends Component {
   state = { username: "", password: "" };

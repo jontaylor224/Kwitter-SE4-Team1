@@ -4,7 +4,7 @@ import Spinner from "react-spinkit";
 import { connect } from "react-redux";
 import { registerThenGoToUserProfile as register } from "../../actions";
 import StickyHeader from "../StickyHeader";
-import logo from "../../squirrellogo.png";
+import logo from "../../img/squirrellogo.png";
 
 class RegisterView extends Component {
   state = { username: "", password: "" };
