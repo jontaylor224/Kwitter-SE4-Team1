@@ -6,7 +6,7 @@ import UpdateProfileForm from "../UpdateProfileForm";
 import UserMessageList from "../UserMessageList";
 import UpdateProfilePicture from "../UpdateProfilePicture";
 
-import { Grid, Segment, Header, Card } from "semantic-ui-react";
+import { Grid, Segment, Card } from "semantic-ui-react";
 
 export default class ProfileView extends Component {
   render() {
@@ -25,9 +25,6 @@ export default class ProfileView extends Component {
             </Grid.Column>
             <Grid.Column floated="right" width={10}>
               <Segment>
-                <Header as="h2" textAlign="center">
-                  My Kweets
-                </Header>
                 <UserMessageList />
               </Segment>{" "}
             </Grid.Column>
