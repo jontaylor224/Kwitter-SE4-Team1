@@ -17,6 +17,7 @@ class StickyHeader extends Component {
           <Menu id="menubar">
             <React.Fragment>
               <Menu.Item>
+                Kwitter
                 <Image src={logo} alt="" style={{ width: "50px" }} />
               </Menu.Item>
               <Menu.Item>

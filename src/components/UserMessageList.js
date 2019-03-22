@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import UserMessageItem from "./UserMessageItem";
 import { connect } from "react-redux";
-import { Card, Header } from "semantic-ui-react";
+import { Card } from "semantic-ui-react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { getMessages, getUsers } from "../actions";
 
@@ -25,14 +25,14 @@ export class UserMessageList extends Component {
     return (
       <Card style={{ width: "100%" }}>
         <Card.Content>
-          <Header as="h2" textAlign="center">
+          <Card.Header as="h2" textAlign="center">
             My Kweets
-          </Header>
+          </Card.Header>
           <InfiniteScroll
             dataLength={this.props.loggedInUser.messages.length}
             next={this.fetchMoreData}
             hasMore={this.state.hasMore}
-            height={500}
+            height={630}
             // loader={<h4>Loading...</h4>}
             endMessage={<p style={{ textAlign: "center" }}>End of messages.</p>}
           >

@@ -28,7 +28,6 @@ class LoginView extends Component {
           <Header style={{textAlign:"center", fontSize:"50px"}}>Kwitter</Header>
           <Card.Content>
             <Form onSubmit={this.handleLogin}>
-              <h1 style={{ textAlign: "center" }}>Login</h1>
               <FormField>
                 <Form.Input
                   placeholder="Username"
@@ -54,8 +53,9 @@ class LoginView extends Component {
                   type="submit"
                   disabled={isLoading}
                   style={{ backgroundColor: "#ffa366" }}
+                  className='btn'
                 >
-                  Submit
+                  Login
                 </Button>
               </div>
             </Form>

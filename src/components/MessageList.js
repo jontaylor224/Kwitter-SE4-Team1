@@ -31,6 +31,9 @@ export class MessageList extends Component {
     return (
       <Card style={{ width: "100%" }}>
         <Card.Content>
+          <Card.Header as="h2" textAlign="center">
+            Kweets
+          </Card.Header>
           <InfiniteScroll
             dataLength={this.props.messages.messages.length}
             next={this.fetchMoreData}
