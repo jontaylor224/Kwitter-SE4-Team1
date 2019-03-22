@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Grid, Card } from "semantic-ui-react";
-import MessageForm from "./MessageForm";
-import StickyHeader from "./StickyHeader";
-import MessageList from "./MessageList";
-import UserAvatar from "./UserAvatar";
-import UserList from "./UserList";
+
+import MessageForm from "../MessageForm";
+import StickyHeader from "../StickyHeader";
+import MessageList from "../MessageList";
+import UserAvatar from "../UserAvatar";
+import UserList from "../UserList";
 
 export class HomeView extends Component {
   render() {

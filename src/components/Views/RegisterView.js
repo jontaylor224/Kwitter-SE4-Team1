@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import { registerThenGoToUserProfile as register } from "../actions";
-import Spinner from "react-spinkit";
-import StickyHeader from "./StickyHeader";
 import { Form, FormField, Card, Button, Image } from "semantic-ui-react";
-import logo from "../squirrellogo.png";
+import Spinner from "react-spinkit";
+import { connect } from "react-redux";
+import { registerThenGoToUserProfile as register } from "../../actions";
+import StickyHeader from "../StickyHeader";
+import logo from "../../squirrellogo.png";
 
 class RegisterView extends Component {
   state = { username: "", password: "" };

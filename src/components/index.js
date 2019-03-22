@@ -1,6 +1,6 @@
 export { default as App } from "./App";
-export { default as LoginView } from "./LoginView";
-export { default as ProfileView } from "./ProfileView";
-export { default as HomeView } from "./HomeView";
-export { default as RegisterView } from "./RegisterView";
+export { default as LoginView } from "./Views/LoginView";
+export { default as ProfileView } from "./Views/ProfileView";
+export { default as HomeView } from "./Views/HomeView";
+export { default as RegisterView } from "./Views/RegisterView";
 

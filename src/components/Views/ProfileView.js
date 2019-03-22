@@ -1,10 +1,12 @@
 import React, { Component } from "react";
-import StickyHeader from "./StickyHeader";
-import UserProfile from "./UserProfile";
+
+import StickyHeader from "../StickyHeader";
+import UserProfile from "../UserProfile";
+import UpdateProfileForm from "../UpdateProfileForm";
+import UserMessageList from "../UserMessageList";
+import UpdateProfilePicture from "../UpdateProfilePicture";
+
 import { Grid, Segment, Header, Card } from "semantic-ui-react";
-import UpdateProfileForm from "./UpdateProfileForm";
-import UserMessageList from "./UserMessageList";
-import UpdateProfilePicture from "./UpdateProfilePicture";
 
 export default class ProfileView extends Component {
   render() {

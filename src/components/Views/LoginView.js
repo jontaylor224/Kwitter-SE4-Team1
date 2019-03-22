@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { loginThenGoToUserProfile as login } from "../actions";
+import { loginThenGoToUserProfile as login } from "../../actions";
 import Spinner from "react-spinkit";
-import StickyHeader from "./StickyHeader";
+import StickyHeader from "../StickyHeader";
 import { Form, FormField, Card, Button, Image } from "semantic-ui-react";
-import logo from "../squirrellogo.png";
+import logo from "../../squirrellogo.png";
 
 class LoginView extends Component {
   state = { username: "", password: "" };
