@@ -30,11 +30,8 @@ export class HomeView extends Component {
             </Grid.Column>
             <Grid.Column floated="right" width={10}>
               <MessageForm />
-              <Card style={{ width: "100%" }}>
-                <Card.Content>
+              
                   <MessageList />
-                </Card.Content>
-              </Card>
             </Grid.Column>
           </Grid.Row>
         </Grid>

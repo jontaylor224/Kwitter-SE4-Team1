@@ -16,7 +16,9 @@ class UserAvatar extends Component {
                 userId={this.props.userId}
                 size={this.props.size}
               />
-              <Card.Header as="h2" textAlign="left">
+              </Card.Content>
+              <Card.Content>
+              <Card.Header>
                 {this.props.displayName}
               </Card.Header>
             </Card.Content>
