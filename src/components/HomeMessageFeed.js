@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { Card } from "semantic-ui-react";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-export class MessageList extends Component {
+export class HomeMessageFeed extends Component {
   state = { hasMore: true };
   componentDidMount() {
     this.props.getMessages(20, this.props.offset);
@@ -78,4 +78,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(MessageList);
+)(HomeMessageFeed);
