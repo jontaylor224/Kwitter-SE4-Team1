@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Feed } from "semantic-ui-react";
+import { Feed, Card } from "semantic-ui-react";
 import { connect } from "react-redux";
+import UserImage from "./UserImage";
 
 export class UserItem extends Component {
   render() {
@@ -9,10 +10,14 @@ export class UserItem extends Component {
         <Feed.Event>
           <Feed.Content>
             <Feed.Summary>
-              <Feed.User style={{ color: "black" }}>{this.props.displayName}</Feed.User>
-              {/* <Feed.Date>
-                <Moment>{this.props.createdAt}</Moment>
-              </Feed.Date> */}
+              <Card style={{ width: "100%" }}>
+                <Card.Content style={{ margin: "auto" }}>
+                  <Card.Header style={{ textAlign: "center" }}>
+                    {this.props.displayName}
+                  </Card.Header>
+                  <UserImage userId={this.props.id} />
+                </Card.Content>
+              </Card>
             </Feed.Summary>
           </Feed.Content>
         </Feed.Event>

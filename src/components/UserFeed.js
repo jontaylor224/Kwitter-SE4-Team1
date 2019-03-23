@@ -11,7 +11,14 @@ export class UserFeed extends Component {
   }
   render() {
     return (
-      <Card style={{height:'305px', overflow:"scroll", margin:'auto', marginTop:'30px'}}>
+      <Card
+        style={{
+          height: "305px",
+          overflow: "scroll",
+          margin: "auto",
+          marginTop: "30px"
+        }}
+      >
         <Card.Content>
           <Card.Header>Kweeters</Card.Header>
           {this.props.userList.map(user => (
@@ -19,6 +26,7 @@ export class UserFeed extends Component {
               key={user.id}
               displayName={user.displayName}
               createdAt={user.createdAt}
+              id={user.id}
             />
           ))}
         </Card.Content>
