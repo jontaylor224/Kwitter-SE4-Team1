@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Feed, Card } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { toggleAddLike, toggleDeleteLike } from "../actions";
-import UserImage from "./UserImage";
 import moment from "moment";
 
 export class ProfileMessageItem extends Component {

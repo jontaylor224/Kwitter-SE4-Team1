@@ -31,7 +31,7 @@ export class MessageItem extends Component {
             <UserImage userId={this.props.message.userId} size="mini" />
           </Feed.Label>
           <Feed.Content>
-            <Feed.Summary>
+            <Feed.Summary style={{paddingBottom:'5px'}}>
               <Feed.User style={{ color: "black" }}>
                 {this.props.displayName}
               </Feed.User>
@@ -39,7 +39,7 @@ export class MessageItem extends Component {
                 {moment(this.props.message.createdAt).fromNow()}
               </Feed.Date>
             </Feed.Summary>
-            <Card>
+            <Card style={{margin:'auto'}}>
               <Card.Content>
                 <Feed.Extra>{this.props.message.text}</Feed.Extra>
                 <Feed.Meta>
