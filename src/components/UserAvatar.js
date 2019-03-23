@@ -18,7 +18,7 @@ class UserAvatar extends Component {
               />
               </Card.Content>
               <Card.Content>
-              <Card.Header>
+              <Card.Header style={{textAlign:'center'}}>
                 {this.props.displayName}
               </Card.Header>
             </Card.Content>

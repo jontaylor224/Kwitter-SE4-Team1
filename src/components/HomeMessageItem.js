@@ -37,7 +37,6 @@ export class MessageItem extends Component {
               </Feed.User>
               <Feed.Date>
                 {moment(this.props.message.createdAt)
-                  .utcOffset(0, true)
                   .fromNow()}
               </Feed.Date>
             </Feed.Summary>
