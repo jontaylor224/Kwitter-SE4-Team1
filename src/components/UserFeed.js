@@ -4,7 +4,7 @@ import { getUsers } from "../actions/users";
 import { connect } from "react-redux";
 import { Card } from "semantic-ui-react";
 
-export class UserList extends Component {
+export class UserFeed extends Component {
   state = { userList: [] };
   componentDidMount() {
     this.props.getUsers();
@@ -42,4 +42,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(UserList);
+)(UserFeed);
