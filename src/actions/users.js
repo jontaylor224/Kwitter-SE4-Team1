@@ -1,7 +1,7 @@
 import { push } from "connected-react-router"
 import { domain, jsonHeaders, handleJsonResponse } from "./constants/index"
 
-
+import {logout} from "./auth.js"
 export const DELETE_USER = "DELETE_USER"
 export const DELETE_USER_SUCCESS = "DELETE_USER_SUCCESS"
 export const DELETE_USER_FAILURE = "DELETE_USER_FAILURE"
@@ -64,6 +64,7 @@ export const deleteUser = token => dispatch => {
             console.log(data)
             dispatch({ type: DELETE_USER_SUCCESS })
             dispatch(push("/register"))
+            return dispatch(logout());
         })
         .catch(err => {
             dispatch({ type: DELETE_USER_FAILURE, err })
@@ -176,3 +177,8 @@ export const getUsers = () => dispatch => {
         );
       });
 }
+
+// export const deleteThenGoToRegister = token => dispatch => {
+//     dispatch(push("/"))
+//     return dispatch(deleteUser(token))
+// };
