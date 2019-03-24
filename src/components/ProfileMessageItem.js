@@ -1,35 +1,32 @@
 import React, { Component } from "react";
-import { Feed } from "semantic-ui-react";
+import { Feed, Card } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { toggleAddLike, toggleDeleteLike } from "../actions";
-import UserImage from "./UserImage";
 import moment from "moment";
 
-export class MessageItem extends Component {
+export class ProfileMessageItem extends Component {
   render() {
     return (
       <Feed className="feedstyle">
-        <Feed.Event>
-          <Feed.Label>
-            <UserImage userId={this.props.message.userId} size="mini" />
-          </Feed.Label>
+        <Feed.Event style={{paddingBottom:'20px'}}>
           <Feed.Content>
             <Feed.Summary>
-              <Feed.User style={{ color: "black" }}>
-                {this.props.displayName}
-              </Feed.User>
-              <Feed.Date>
+              <Feed.Date style={{paddingBottom:'5px'}}>
                 {moment(this.props.message.createdAt).fromNow()}
               </Feed.Date>
             </Feed.Summary>
-            <Feed.Extra>{this.props.message.text}</Feed.Extra>
-            <Feed.Meta>
-              <Feed.Like>
-                {this.props.message.likes === undefined
-                  ? 0 + " Likes"
-                  : this.props.message.likes.length + " Likes"}
-              </Feed.Like>
-            </Feed.Meta>
+            <Card style={{margin:'auto'}}>
+              <Card.Content>
+                <Feed.Extra>{this.props.message.text}</Feed.Extra>
+                <Feed.Meta>
+                  <Feed.Like>
+                    {this.props.message.likes === undefined
+                      ? 0 + " Likes"
+                      : this.props.message.likes.length + " Likes"}
+                  </Feed.Like>
+                </Feed.Meta>
+              </Card.Content>
+            </Card>
           </Feed.Content>
         </Feed.Event>
       </Feed>
@@ -45,4 +42,4 @@ export default connect(
     userId: auth.login.id
   }),
   { toggleAddLike, toggleDeleteLike }
-)(MessageItem);
+)(ProfileMessageItem);

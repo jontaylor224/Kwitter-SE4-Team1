@@ -5,11 +5,10 @@ import { Card } from "semantic-ui-react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { getMessages, getUsers } from "../actions";
 
-export class UserMessageList extends Component {
+export class ProfileMessageFeed extends Component {
   state = { hasMore: true };
   componentDidMount() {
     this.props.getMessages(20, this.props.offset);
-    this.props.getUsers();
   }
 
   fetchMoreData = () => {
@@ -77,4 +76,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(UserMessageList);
+)(ProfileMessageFeed);

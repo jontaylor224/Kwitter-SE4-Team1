@@ -4,14 +4,21 @@ import { getUsers } from "../actions/users";
 import { connect } from "react-redux";
 import { Card } from "semantic-ui-react";
 
-export class UserList extends Component {
+export class UserFeed extends Component {
   state = { userList: [] };
   componentDidMount() {
     this.props.getUsers();
   }
   render() {
     return (
-      <Card style={{height:'305px', overflow:"scroll", margin:'auto', marginTop:'30px'}}>
+      <Card
+        style={{
+          height: "305px",
+          overflow: "scroll",
+          margin: "auto",
+          marginTop: "30px"
+        }}
+      >
         <Card.Content>
           <Card.Header>Kweeters</Card.Header>
           {this.props.userList.map(user => (
@@ -19,6 +26,7 @@ export class UserList extends Component {
               key={user.id}
               displayName={user.displayName}
               createdAt={user.createdAt}
+              id={user.id}
             />
           ))}
         </Card.Content>
@@ -42,4 +50,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(UserList);
+)(UserFeed);

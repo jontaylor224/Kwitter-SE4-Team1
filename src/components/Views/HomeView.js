@@ -5,7 +5,7 @@ import MessageForm from "../MessageForm";
 import StickyHeader from "../StickyHeader";
 import HomeMessageFeed from "../HomeMessageFeed";
 import UserAvatar from "../UserAvatar";
-import UserList from "../UserList";
+import UserFeed from "../UserFeed";
 
 export class HomeView extends Component {
   render() {
@@ -17,7 +17,7 @@ export class HomeView extends Component {
           <Grid.Row columns={2}>
             <Grid.Column floated="left" width={6}>
               <UserAvatar />
-              <UserList />
+              <UserFeed />
             </Grid.Column>
             <Grid.Column floated="right" width={10}>
               <MessageForm />
