@@ -9,7 +9,6 @@ export class ProfileMessageFeed extends Component {
   state = { hasMore: true };
   componentDidMount() {
     this.props.getMessages(20, this.props.offset);
-    this.props.getUsers();
   }
 
   fetchMoreData = () => {
