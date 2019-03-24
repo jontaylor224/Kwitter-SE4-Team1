@@ -15,7 +15,7 @@ export class ProfileMessageItem extends Component {
                 {moment(this.props.message.createdAt).fromNow()}
               </Feed.Date>
             </Feed.Summary>
-            <Card style={{margin:'auto'}}>
+            <Card style={{margin:'auto', margnLeft:'50px'}}>
               <Card.Content>
                 <Feed.Extra>{this.props.message.text}</Feed.Extra>
                 <Feed.Meta>
