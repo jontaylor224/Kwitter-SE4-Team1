@@ -5,6 +5,7 @@ import UserProfile from "../UserProfile";
 import UpdateProfileForm from "../UpdateProfileForm";
 import ProfileMessageFeed from "../ProfileMessageFeed";
 import UpdateProfilePicture from "../UpdateProfilePicture";
+import DeleteUser from "../DeleteUser";
 
 import { Grid, Segment, Card } from "semantic-ui-react";
 
@@ -21,6 +22,7 @@ export default class ProfileView extends Component {
               <Card style={{margin:'auto', marginTop:'50px'}}>
                 <UpdateProfilePicture />
                 <UpdateProfileForm />
+                <DeleteUser />
               </Card>
             </Grid.Column>
             <Grid.Column floated="right" width={10}>
