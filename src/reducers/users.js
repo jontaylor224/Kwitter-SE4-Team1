@@ -28,8 +28,6 @@ const initialState = {
     updatedAt: "",
     messages: []
   },
-  userId: 3,
-  users: {},
   uploadImageResult: "",
   userList: []
 };
@@ -43,7 +41,7 @@ export default (state = initialState, action) => {
     case DELETE_USER_SUCCESS:
       return {
         ...state,
-        initialState
+        loggedInUser: initialState.loggedInUser
       };
 
     case GET_ANY_USER:
