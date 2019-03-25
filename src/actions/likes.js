@@ -7,13 +7,13 @@ export const ADD_LIKE_FAIL = "ADD_LIKE_FAIL";
 export const DELETE_LIKE = "DELETE_LIKE";
 const url = domain + "/likes";
 
-export const toggleAddLike = messageId => (dispatch) => {
+export const toggleAddLike = messageId => dispatch => {
   dispatch(addLike(messageId)).then(() => {
     dispatch(getMessageById(messageId));
   });
 };
 
-export const toggleDeleteLike = (likeId,messageId) => (dispatch) => {
+export const toggleDeleteLike = (likeId, messageId) => dispatch => {
   dispatch(deleteLike(likeId)).then(() => {
     dispatch(getMessageById(messageId));
   });
@@ -47,26 +47,25 @@ export const addLike = messageId => (dispatch, getState) => {
 export const deleteLike = likeId => (dispatch, getState) => {
   const token = getState().auth.login.token;
   dispatch({ type: DELETE_LIKE });
-    
-    return fetch(`${url}/${likeId}`, {
-      method: "DELETE",
-      headers: {
-        ...jsonHeaders,
-        Authorization: "Bearer " + token
+
+  return fetch(`${url}/${likeId}`, {
+    method: "DELETE",
+    headers: {
+      ...jsonHeaders,
+      Authorization: "Bearer " + token
+    }
+  })
+    .then(handleJsonResponse)
+    .then(result => {
+      if (result) {
+        console.log(result);
+        dispatch({
+          type: DELETE_LIKE,
+          payload: result
+        });
       }
     })
-      .then(handleJsonResponse)
-      .then(result => {
-        if (result) {
-          console.log(result)
-          dispatch({
-            type: DELETE_LIKE,
-            payload: result
-          });
-        }
-      })
-      .catch(err => console.log(err));
-  };
-
+    .catch(err => console.log(err));
+};
 
 export default addLike;

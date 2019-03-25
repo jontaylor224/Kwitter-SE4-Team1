@@ -26,12 +26,12 @@ export class MessageItem extends Component {
   render() {
     return (
       <Feed className="feedstyle">
-        <Feed.Event style={{paddingBottom:'20px'}}>
+        <Feed.Event style={{ paddingBottom: "20px" }}>
           <Feed.Label>
             <UserImage userId={this.props.message.userId} size="mini" />
           </Feed.Label>
           <Feed.Content>
-            <Feed.Summary style={{paddingBottom:'5px'}}>
+            <Feed.Summary style={{ paddingBottom: "5px" }}>
               <Feed.User style={{ color: "black" }}>
                 {this.props.displayName}
               </Feed.User>
@@ -39,7 +39,7 @@ export class MessageItem extends Component {
                 {moment(this.props.message.createdAt).fromNow()}
               </Feed.Date>
             </Feed.Summary>
-            <Card style={{ margin:'10px', width:'90%'}}>
+            <Card style={{ margin: "10px", width: "90%" }}>
               <Card.Content>
                 <Feed.Extra>{this.props.message.text}</Feed.Extra>
                 <Feed.Meta>
