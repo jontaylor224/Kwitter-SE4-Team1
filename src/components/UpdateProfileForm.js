@@ -23,7 +23,10 @@ class UpdateProfileForm extends Component {
           trigger={
             <Button
               onClick={this.handleModal}
-              style={{ backgroundColor: "#ffa366",borderBottom:"1px solid grey" }}
+              style={{
+                backgroundColor: "#ffa366",
+                borderBottom: "1px solid grey"
+              }}
             >
               <Icon name="id card outline" />
               Update Profile

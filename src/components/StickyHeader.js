@@ -22,11 +22,7 @@ class StickyHeader extends Component {
               </Menu.Item>
               <Menu.Item>
                 <Link to="/home">
-                  <Button
-                    style={{ backgroundColor: "#ffa366" }}
-                  >
-                    Home
-                  </Button>
+                  <Button style={{ backgroundColor: "#ffa366" }}>Home</Button>
                 </Link>
               </Menu.Item>
               <Menu.Item>
@@ -59,9 +55,7 @@ class StickyHeader extends Component {
             <React.Fragment>
               <Menu.Item>
                 <Link to="/">
-                  <Button style={{ backgroundColor: "#ffa366" }}>
-                    Login
-                  </Button>
+                  <Button style={{ backgroundColor: "#ffa366" }}>Login</Button>
                 </Link>
               </Menu.Item>
               <Menu.Item>
