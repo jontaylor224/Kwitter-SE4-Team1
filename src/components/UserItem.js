@@ -10,7 +10,7 @@ export class UserItem extends Component {
         <Feed.Event>
           <Feed.Content>
             <Feed.Summary>
-              <Card className="feedstyle" style={{ width: "100%" }}>
+              <Card style={{ width: "100%" }}>
                 <Card.Content style={{ margin: "auto" }}>
                   <Card.Header style={{ textAlign: "center" }}>
                     {this.props.displayName}
