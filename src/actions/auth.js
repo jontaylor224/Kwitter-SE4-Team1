@@ -65,7 +65,7 @@ const register = registerData => dispatch => {
     });
 };
 
-export const logout = () => (dispatch,getState) => {
+export const logout = () => (dispatch, getState) => {
   const token = getState().auth.login.token;
   dispatch({
     type: LOGOUT
@@ -80,10 +80,8 @@ export const logout = () => (dispatch,getState) => {
       return dispatch({
         type: LOGOUT_SUCCESS
       });
-    })
+    });
 };
-
-
 
 export const loginThenGoToUserProfile = loginData => dispatch => {
   return dispatch(login(loginData)).then(() => dispatch(push("/profile")));
@@ -94,6 +92,6 @@ export const registerThenGoToUserProfile = registerData => dispatch => {
 };
 
 export const logoutThenGoToLogin = logoutData => dispatch => {
-  dispatch(push("/")) 
-  return dispatch(logout(logoutData))
+  dispatch(push("/"));
+  return dispatch(logout(logoutData));
 };

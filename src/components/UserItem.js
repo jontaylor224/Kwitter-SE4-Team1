@@ -6,7 +6,7 @@ import UserImage from "./UserImage";
 export class UserItem extends Component {
   render() {
     return (
-      <Feed className="feedstyle">
+      <Feed>
         <Feed.Event>
           <Feed.Content>
             <Feed.Summary>

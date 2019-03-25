@@ -75,8 +75,8 @@ export default (state = initialState, action) => {
         getMessageError: null
       };
     case GET_MESSAGE_BY_ID_SUCCESS:
-      let newMessages = state.messages.slice()
-      newMessages.splice(action.index,1, action.payload.message)
+      let newMessages = state.messages.slice();
+      newMessages.splice(action.index, 1, action.payload.message);
       return {
         ...state,
         messages: newMessages,

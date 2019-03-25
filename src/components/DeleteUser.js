@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Header, Modal, Button, Icon} from "semantic-ui-react";
+import { Header, Modal, Button, Icon } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { deleteUser } from "../actions/users";
 
@@ -9,9 +9,9 @@ class DeleteUser extends Component {
   handleModal = () => {
     this.setState({ open: !this.state.open });
   };
-  handleDelete = ()=>{
-      this.props.deleteUser(this.props.token)
-  }
+  handleDelete = () => {
+    this.props.deleteUser(this.props.token);
+  };
 
   render() {
     return (
@@ -31,13 +31,11 @@ class DeleteUser extends Component {
         >
           <Header icon="archive" content="Remove Account" />
           <Modal.Content>
-            <p>
-              Are you sure you want to delete your account?
-            </p>
+            <p>Are you sure you want to delete your account?</p>
           </Modal.Content>
           <Modal.Actions>
-                    <Button basic color="red" onClick={this.handleModal}>
-              <Icon name="remove"/> No
+            <Button basic color="red" onClick={this.handleModal}>
+              <Icon name="remove" /> No
             </Button>
             <Button color="green" inverted onClick={this.handleDelete}>
               <Icon name="checkmark" /> Yes

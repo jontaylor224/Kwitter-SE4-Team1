@@ -42,16 +42,20 @@ export class HomeMessageFeed extends Component {
             // loader={<h4>Loading...</h4>}
             endMessage={<p style={{ textAlign: "center" }}>End of messages.</p>}
           >
-            {this.props.messages.messages.map(message =>{ 
-              let user = this.props.userList.find(user => user.id === message.userId);
-              if (user){
-              return(
-              <HomeMessageItem
-                key={message.id}
-                message={message}
-                displayName={this.matchIdtoUsername(message.userId)}
-              />)}
-              return null
+            {this.props.messages.messages.map(message => {
+              let user = this.props.userList.find(
+                user => user.id === message.userId
+              );
+              if (user) {
+                return (
+                  <HomeMessageItem
+                    key={message.id}
+                    message={message}
+                    displayName={this.matchIdtoUsername(message.userId)}
+                  />
+                );
+              }
+              return null;
             })}
           </InfiniteScroll>
         </Card.Content>

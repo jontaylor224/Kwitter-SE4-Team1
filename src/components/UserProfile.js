@@ -11,14 +11,13 @@ class UserProfile extends Component {
   }
   render() {
     return (
-      <Card style={{margin:'auto'}}>
+      <Card style={{ margin: "auto" }}>
         <Card.Content>
           <UserAvatar />
-          <Card.Meta style={{ marginTop:'10px'}}>
-            Kweeting since{" "}
-            {moment(this.props.createdAt).format('MMMM DD YYYY')}
+          <Card.Meta style={{ marginTop: "10px" }}>
+            Kweeting since {moment(this.props.createdAt).format("MMMM DD YYYY")}
           </Card.Meta>
-          <Card style={{ backgroundColor: '#ffa366' }}>
+          <Card style={{ backgroundColor: "#ffa366" }}>
             <Card.Content>
               <Card.Header as="h4">Bio:</Card.Header>
               <Card.Description>

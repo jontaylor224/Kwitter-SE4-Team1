@@ -14,9 +14,8 @@ export const createMessage = messageData => dispatch => {
 
   return fetch(url, {
     method: "POST",
-    headers: {...jsonHeaders, 
-        Authorization: `Bearer ${messageData.token}`},
-    body: JSON.stringify({'text':messageData.text})
+    headers: { ...jsonHeaders, Authorization: `Bearer ${messageData.token}` },
+    body: JSON.stringify({ text: messageData.text })
   })
     .then(handleJsonResponse)
     .then(result => {
@@ -32,9 +31,4 @@ export const createMessage = messageData => dispatch => {
     });
 };
 
-
-export default createMessage
-
-// export const createMessageThenReloadMessages = messageData => dispatch => {
-//   return dispatch(createMessage(messageData)).then(() => dispatch(push("/messages")));
-// };
+export default createMessage;

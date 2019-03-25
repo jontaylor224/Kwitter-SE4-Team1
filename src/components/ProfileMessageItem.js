@@ -8,14 +8,14 @@ export class ProfileMessageItem extends Component {
   render() {
     return (
       <Feed className="feedstyle">
-        <Feed.Event style={{paddingBottom:'20px'}}>
+        <Feed.Event style={{ paddingBottom: "20px" }}>
           <Feed.Content>
             <Feed.Summary>
-              <Feed.Date style={{paddingBottom:'5px'}}>
+              <Feed.Date style={{ paddingBottom: "5px" }}>
                 {moment(this.props.message.createdAt).fromNow()}
               </Feed.Date>
             </Feed.Summary>
-            <Card style={{ margin:'20px', width:'92%'}}>
+            <Card style={{ margin: "20px", width: "92%" }}>
               <Card.Content>
                 <Feed.Extra>{this.props.message.text}</Feed.Extra>
                 <Feed.Meta>

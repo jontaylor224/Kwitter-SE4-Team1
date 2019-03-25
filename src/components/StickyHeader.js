@@ -16,33 +16,21 @@ class StickyHeader extends Component {
         {this.props.login !== null ? (
           <Menu id="menubar">
             <React.Fragment>
-              <Menu.Item>
-                Kwitter
-                <Image src={logo} alt="" style={{ width: "50px" }} />
-              </Menu.Item>
-              <Menu.Item>
-                <Link to="/home">
-                  <Button
-                    style={{ backgroundColor: "#ffa366" }}
-                  >
-                    Home
-                  </Button>
-                </Link>
-              </Menu.Item>
-              <Menu.Item>
-                <Link to="/profile">
-                  <Button style={{ backgroundColor: "#ffa366" }}>
-                    Profile
-                  </Button>
-                </Link>
-              </Menu.Item>
-              <Menu.Menu position="right">
+              <Link to="/home">
                 <Menu.Item>
-                  <span style={{ marginRight: "10px" }}>
-                    {this.props.displayName}
-                  </span>
-                  <UserImage userId={this.props.login.id} size="mini" />
+                  Kwitter
+                  <Image src={logo} alt="" style={{ width: "50px" }} />
                 </Menu.Item>
+              </Link>
+              <Menu.Menu position="right">
+                <Link to="/profile">
+                  <Menu.Item>
+                    <span style={{ marginRight: "10px" }}>
+                      {this.props.displayName}
+                    </span>
+                    <UserImage userId={this.props.login.id} size="mini" />
+                  </Menu.Item>
+                </Link>
                 <Menu.Item>
                   <Button
                     style={{ backgroundColor: "#ffa366" }}
@@ -59,9 +47,7 @@ class StickyHeader extends Component {
             <React.Fragment>
               <Menu.Item>
                 <Link to="/">
-                  <Button style={{ backgroundColor: "#ffa366" }}>
-                    Login
-                  </Button>
+                  <Button style={{ backgroundColor: "#ffa366" }}>Login</Button>
                 </Link>
               </Menu.Item>
               <Menu.Item>
