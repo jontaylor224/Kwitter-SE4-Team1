@@ -6,11 +6,11 @@ import UserImage from "./UserImage";
 export class UserItem extends Component {
   render() {
     return (
-      <Feed className="feedstyle">
+      <Feed>
         <Feed.Event>
           <Feed.Content>
             <Feed.Summary>
-              <Card style={{ width: "100%" }}>
+              <Card className="feedstyle" style={{ width: "100%" }}>
                 <Card.Content style={{ margin: "auto" }}>
                   <Card.Header style={{ textAlign: "center" }}>
                     {this.props.displayName}
