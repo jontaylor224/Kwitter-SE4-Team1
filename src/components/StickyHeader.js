@@ -24,7 +24,7 @@ class StickyHeader extends Component {
               </Link>
               <Menu.Menu position="right">
                 <Link to="/profile">
-                  <Menu.Item>
+                  <Menu.Item style={{ height: "100%" }}>
                     <span style={{ marginRight: "10px" }}>
                       {this.props.displayName}
                     </span>
