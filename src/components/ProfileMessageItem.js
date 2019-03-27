@@ -15,9 +15,11 @@ export class ProfileMessageItem extends Component {
                 {moment(this.props.message.createdAt).fromNow()}
               </Feed.Date>
             </Feed.Summary>
-            <Card style={{ margin: "20px", width: "92%" }}>
+            <Card style={{ margin: "auto" }}>
               <Card.Content>
-                <Feed.Extra className='break-word'>{this.props.message.text}</Feed.Extra>
+                <Feed.Extra className="break-word">
+                  {this.props.message.text}
+                </Feed.Extra>
                 <Feed.Meta>
                   <Feed.Like>
                     {this.props.message.likes === undefined
