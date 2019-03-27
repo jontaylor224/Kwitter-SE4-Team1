@@ -17,7 +17,7 @@ export class ProfileMessageItem extends Component {
             </Feed.Summary>
             <Card style={{ margin: "20px", width: "92%" }}>
               <Card.Content>
-                <Feed.Extra>{this.props.message.text}</Feed.Extra>
+                <Feed.Extra className='break-word'>{this.props.message.text}</Feed.Extra>
                 <Feed.Meta>
                   <Feed.Like>
                     {this.props.message.likes === undefined

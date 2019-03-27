@@ -20,7 +20,7 @@ class UserProfile extends Component {
           <Card style={{ backgroundColor: "#ffa366" }}>
             <Card.Content>
               <Card.Header as="h4">Bio:</Card.Header>
-              <Card.Description>
+              <Card.Description className='break-word'>
                 {this.props.about || "This kweeter has not yet created a bio"}
               </Card.Description>
             </Card.Content>
