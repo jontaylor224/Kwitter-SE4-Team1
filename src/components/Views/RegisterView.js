@@ -55,6 +55,15 @@ class RegisterView extends Component {
                   label="Password"
                   onChange={this.handleChange}
                 />
+                <Form.Input
+                  placeholder="Confirm Password"
+                  name="password"
+                  type="password"
+                  required
+                  fluid
+                  label="Confirm Password"
+                  onChange={this.handleChange}
+                />
                 {isLoading && <Spinner name="circle" color="blue" />}
                 {err && <p style={{ color: "red" }}>{err}</p>}
               </FormField>
