@@ -16,3 +16,7 @@ body {
 .feedstyle:hover {
   background-color: #ffe0cc;
 }
+
+.break-word {
+  word-wrap: break-word;
+}

@@ -41,7 +41,7 @@ export class MessageItem extends Component {
             </Feed.Summary>
             <Card style={{ margin: "10px", width: "90%" }}>
               <Card.Content>
-                <Feed.Extra>{this.props.message.text}</Feed.Extra>
+                <Feed.Extra className='break-word'>{this.props.message.text}</Feed.Extra>
                 <Feed.Meta>
                   <Feed.Like onClick={this.handleAddLike}>
                     <Icon name="like" />
