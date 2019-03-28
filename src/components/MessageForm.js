@@ -4,13 +4,17 @@ import { connect } from "react-redux";
 import { createMessage } from "../actions";
 
 class MessageForm extends Component {
-  state = { token: this.props.token, text: "" };
+  state = { token: this.props.token, text: "", err: null };
 
   handleCreateMessage = e => {
     e.preventDefault();
-    this.props.createMessage(this.state);
-    e.target[0].value = "";
-    this.setState({ text: "" });
+    if (this.state.text.length < 255) {
+      this.props.createMessage(this.state);
+      e.target[0].value = "";
+      this.setState({ text: "" });
+    } else {
+      this.setState({ err: "Kweet too long" });
+    }
   };
 
   handleChange = e => {
@@ -28,6 +32,9 @@ class MessageForm extends Component {
                 placeholder="Enter kweet..."
                 onChange={this.handleChange}
               />
+              {this.state.err && (
+                <p style={{ color: "red" }}>{this.state.err}</p>
+              )}
             </Form.Field>
             <Button type="submit" style={{ backgroundColor: "#ffa366" }}>
               Kweet
@@ -41,8 +48,6 @@ class MessageForm extends Component {
 
 export default connect(
   ({ auth }) => ({
-    isLoading: auth.loginLoading,
-    err: auth.loginError,
     token: auth.login.token
   }),
   { createMessage }
