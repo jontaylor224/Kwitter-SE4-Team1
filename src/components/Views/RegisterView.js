@@ -7,8 +7,6 @@ import StickyHeader from "../StickyHeader";
 import logo from "../../img/squirrellogo.png";
 
 class RegisterView extends Component {
-  state = { username: "", password: "" };
-
   handleRegister = e => {
     e.preventDefault();
     this.props.register(this.state);
@@ -57,7 +55,7 @@ class RegisterView extends Component {
                 />
                 <Form.Input
                   placeholder="Confirm Password"
-                  name="password"
+                  name="confirmpassword"
                   type="password"
                   required
                   fluid

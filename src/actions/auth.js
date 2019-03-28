@@ -46,23 +46,29 @@ const register = registerData => dispatch => {
     type: REGISTER
   });
 
-  return fetch(url + "/register", {
-    method: "POST",
-    headers: jsonHeaders,
-    body: JSON.stringify(registerData)
-  })
-    .then(handleJsonResponse)
-    .then(result => {
-      return dispatch({
-        type: REGISTER_SUCCESS,
-        payload: result
-      });
+  if (registerData.password === registerData.confirmpassword) {
+    return fetch(url + "/register", {
+      method: "POST",
+      headers: jsonHeaders,
+      body: JSON.stringify(registerData)
     })
-    .catch(err => {
-      return Promise.reject(
-        dispatch({ type: REGISTER_FAIL, payload: err.message })
-      );
-    });
+      .then(handleJsonResponse)
+      .then(result => {
+        return dispatch({
+          type: REGISTER_SUCCESS,
+          payload: result
+        });
+      })
+      .catch(err => {
+        return Promise.reject(
+          dispatch({ type: REGISTER_FAIL, payload: err.message })
+        );
+      });
+  } else {
+    return Promise.reject(
+      dispatch({ type: REGISTER_FAIL, payload: "passwords must match" })
+    );
+  }
 };
 
 export const logout = () => (dispatch, getState) => {
