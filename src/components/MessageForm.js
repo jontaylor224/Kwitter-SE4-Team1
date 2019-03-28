@@ -11,7 +11,7 @@ class MessageForm extends Component {
     if (this.state.text.length < 255) {
       this.props.createMessage(this.state);
       e.target[0].value = "";
-      this.setState({ text: "" });
+      this.setState({ text: "", err: null });
     } else {
       this.setState({ err: "Kweet too long" });
     }
