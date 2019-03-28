@@ -14,7 +14,6 @@ const initialState = {
   loginLoading: false,
   login: null,
   loginError: null,
-  register: null,
   registerError: null,
   username: null,
   displayName: null,
