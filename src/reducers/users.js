@@ -59,7 +59,8 @@ export default (state = initialState, action) => {
     case GET_USER_SUCCESS:
       return {
         ...state,
-        loggedInUser: action.data
+        loggedInUser: action.data,
+        imageTimestamp: ""
       };
     case GET_USER_FAILURE:
       return state;
