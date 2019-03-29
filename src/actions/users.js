@@ -177,8 +177,3 @@ export const getUsers = () => dispatch => {
       );
     });
 };
-
-// export const deleteThenGoToRegister = token => dispatch => {
-//     dispatch(push("/"))
-//     return dispatch(deleteUser(token))
-// };

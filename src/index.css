@@ -9,6 +9,12 @@ body {
   justify-content: center;
 }
 
+#menubar {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
 .feedstyle:nth-child(even) {
   background-color: #ffa366;
 }
