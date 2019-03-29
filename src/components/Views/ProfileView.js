@@ -16,7 +16,7 @@ export default class ProfileView extends Component {
         <StickyHeader />
         <Grid container stackable>
           <Grid.Row />
-          <Grid.Row columns={2}>
+          <Grid.Row columns={2} style={{ marginTop: "70px" }}>
             <Grid.Column floated="left" width={6}>
               <UserProfile />
               <Card style={{ margin: "auto", marginTop: "50px" }}>
