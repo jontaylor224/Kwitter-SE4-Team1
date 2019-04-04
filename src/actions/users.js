@@ -169,6 +169,7 @@ export const uploadImage = imageData => (dispatch, getState) => {
         type: UPLOAD_USER_IMAGE_FAILURE,
         uploadImageResult: "Image upload failed"
       });
+      alert("image filesize too big");
     });
 };
 
