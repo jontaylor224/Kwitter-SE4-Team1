@@ -43,7 +43,7 @@ class StickyHeader extends Component {
             </React.Fragment>
           </Menu>
         ) : (
-          <Menu secondary id="menubar">
+          <Menu secondary>
             <React.Fragment>
               <Menu.Item>
                 <Link to="/">
