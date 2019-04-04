@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Form, FormField, Card, Button, Image } from "semantic-ui-react";
 import Spinner from "react-spinkit";
 import { connect } from "react-redux";
-import { registerThenGoToUserProfile as register } from "../../actions";
+import { registerThenGoToLogin as register } from "../../actions";
 import StickyHeader from "../StickyHeader";
 import logo from "../../img/squirrellogo.png";
 

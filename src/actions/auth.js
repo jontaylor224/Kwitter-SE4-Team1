@@ -61,7 +61,7 @@ const register = registerData => dispatch => {
       })
       .catch(err => {
         return Promise.reject(
-          dispatch({ type: REGISTER_FAIL, payload: err.message })
+          dispatch({ type: REGISTER_FAIL, payload: err.errors[0].message })
         );
       });
   } else {
@@ -93,7 +93,7 @@ export const loginThenGoToUserProfile = loginData => dispatch => {
   return dispatch(login(loginData)).then(() => dispatch(push("/profile")));
 };
 
-export const registerThenGoToUserProfile = registerData => dispatch => {
+export const registerThenGoToLogin = registerData => dispatch => {
   return dispatch(register(registerData)).then(() => dispatch(push("/")));
 };
 
