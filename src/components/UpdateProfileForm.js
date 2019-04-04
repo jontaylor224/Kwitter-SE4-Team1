@@ -10,6 +10,7 @@ class UpdateProfileForm extends Component {
 
   handleSubmit = () => {
     this.props.updateUser({ ...this.state });
+    this.setState({ displayName: "", password: "", about: "" });
     this.handleModal();
   };
   handleModal = () => {

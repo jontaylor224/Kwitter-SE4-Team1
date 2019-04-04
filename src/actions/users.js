@@ -76,14 +76,21 @@ export const updateUser = userData => (dispatch, getState) => {
   if (userData.displayName === "") {
     delete userData.displayName;
   }
-  if (userData.displayName.length < 3 || userData.displayName.length > 20) {
-    alert("display name must be between 3 and 20 characters");
+  if (userData.displayName !== undefined) {
+    if (userData.displayName.length < 3 || userData.displayName.length > 20) {
+      alert("display name must be between 3 and 20 characters");
+    }
   }
-  if (userData.password.length < 3 || userData.password.length > 20) {
-    alert("password must be between 3 and 20 characters");
+
+  if (userData.password !== undefined) {
+    if (userData.password.length < 3 || userData.password.length > 20) {
+      alert("password must be between 3 and 20 characters");
+    }
   }
-  if (userData.about.length > 255) {
-    alert("about must be less than 255 characters");
+  if (userData.about !== undefined) {
+    if (userData.about.length > 255) {
+      alert("about must be less than 255 characters");
+    }
   }
 
   if (userData.password === "") {
